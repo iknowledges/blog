@@ -1,0 +1,6 @@
+* [ChatGPT的底层逻辑](AI/chatgpt-logic.md)
+* [Transformer模型](AI/transformer.md)
+* [BERT从零详细解读](AI/bert.md)
+* [反向传播算法](AI/backpropagation.md)
+* [使用LLMs进行生成](AI/generation-with-llms.md)
+* [微调预训练模型](AI/fine-tune-model.md)
