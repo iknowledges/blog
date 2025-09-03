@@ -42,6 +42,16 @@ $env:RUSTUP_UPDATE_ROOT="https://mirrors.ustc.edu.cn/rust-static/rustup"
 .\rustup-init.exe
 ```
 
+3. 其他命令
+
+```
+# 查看版本
+rustc --version
+# 卸载Rust
+rustup self uninstall
+```
+
 #### 参考资源
 
+- [Install Rust](https://www.rust-lang.org/tools/install)
 - [RUST安装慢怎么办，使用镜像方式安装](https://blog.csdn.net/u010964076/article/details/105200376)
