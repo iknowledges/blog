@@ -31,8 +31,8 @@ rustup self uninstall
 
 1. 设置环境变量，自定义Rust的安装路径：
 
-- RUSTUP_HOME: D:\Software\Rust\.rustup
-- CARGO_HOME: D:\Software\Rust\.cargo
+- RUSTUP_HOME: `D:\Software\Rust\.rustup`
+- CARGO_HOME: `D:\Software\Rust\.cargo`
 
 2. 下载[rustup-init.exe](https://www.rust-lang.org/tools/install)，然后打开powershell执行下面命令进行安装：
 
