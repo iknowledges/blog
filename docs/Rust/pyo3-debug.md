@@ -17,11 +17,11 @@ version = "0.1.0"
 edition = "2024"
 
 [lib]
-name = "pyo3demo"
+name = "pyo3lib"
 crate-type = ["cdylib"]
 
 [dependencies]
-pyo3 = "0.24.1"
+pyo3 = "0.26.0"
 ```
 
 3. 编写lib.rs如下：
@@ -52,16 +52,16 @@ impl MyClass {
 }
 
 #[pymodule]
-fn pyo3demo(m: &Bound<'_, PyModule>) -> PyResult<()> {
-    m.add_class::<MyClass>()?;
-    Ok(())
+mod pyo3lib {
+    #[pymodule_export]
+    use super::MyClass;
 }
 ```
 
 4. 编写test.py如下：
 
 ```python
-from pyo3demo import MyClass
+from pyo3lib import MyClass
 
 my = MyClass(10)
 print(my.num)
@@ -102,4 +102,4 @@ cargo build
 
 #### 参考资料
 
-- [PyO3 user guide](https://pyo3.rs/v0.24.1/debugging.html)
+- [PyO3 user guide](https://pyo3.rs/v0.26.0/debugging.html)

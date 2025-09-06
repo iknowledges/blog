@@ -7,6 +7,7 @@
 * [中间件](Middleware/README.md)
 * [JavaScript知识](JavaScript/README.md)
 * [Java知识](Java/README.md)
+* [Rust知识](Rust/README.md)
 * [Python知识](Python/README.md)
 * [C++知识](Cpp/README.md)
 * [第三方库](ThirdParty/README.md)

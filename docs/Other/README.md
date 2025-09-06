@@ -1,6 +1,4 @@
 * [Docsify配置](Other/docsify-config.md)
-* [安装Rust](Other/rust-install.md)
-* [PyO3调试教程](Other/pyo3-debug.md)
 * [Flutter安装教程](Other/flutter-install.md)
 * [GDB调试教程](Other/learn-gdb.md)
 * [Ubuntu编译calibre](Other/ubuntu-build-calibre.md)
