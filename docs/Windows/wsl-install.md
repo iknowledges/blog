@@ -30,6 +30,10 @@ wsl --set-default-version 2
 ## 迁移
 
 ```
+# 查看有效分发版的列表
+wsl --list --online
+# 安装指定分发版
+wsl --install Ubuntu-24.04
 # 查看已安装的wsl状态
 wsl -l -v
 # 停止正在运行的wsl
