@@ -1,4 +1,4 @@
-* [conan2使用教程](Cpp/conan2.md)
+* [Conan2使用教程](Cpp/conan2.md)
 * [C++的lambda表达式](Cpp/cpp-lambda.md)
 * [cmake常用函数](Cpp/cmake-function.md)
 * [Qt安装MSVC2017编译器](Cpp/qt-msvc2017.md)
