@@ -141,6 +141,8 @@ conan cache path boost/1.79.0
 conan search boost --remote=conancenter
 # 查看远程仓库地址
 conan remote list
+# 检查当前目录下conanfile.txt中的依赖关系图
+conan graph info .
 ```
 
 #### 参考资料
