@@ -147,3 +147,4 @@ conan remote list
 
 - [使用 Conan 构建一个简单的 CMake 项目](https://docs.conan.org.cn/2/tutorial/consuming_packages/build_simple_cmake_project.html)
 - [conan2.0 基础入门 (主流的C/C++包管理工具)](https://www.bilibili.com/video/BV18s421A7Jj)
+- [理解 Conan 包布局](https://docs.conan.org.cn/2/tutorial/developing_packages/package_layout.html)
