@@ -135,7 +135,7 @@ cmake --build --preset=conan-release
 1. 安装支持socks协议的requests包
 
 ```
-pip install 'requests[socks]'
+python -m pip install 'requests[socks]'
 ```
 
 2. 设置环境变量
