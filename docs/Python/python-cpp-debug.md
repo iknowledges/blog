@@ -113,6 +113,8 @@ pybind11_add_module(example main.cpp)
 
 混合调试插件[Python C++ Debugger](https://marketplace.visualstudio.com/items?itemName=benjamin-simmonds.pythoncpp-debug)配置如下：
 
+- Windows
+
 ```json
 {
     "version": "0.2.0",
@@ -125,17 +127,61 @@ pybind11_add_module(example main.cpp)
             "cppAttachName": "(Windows) Attach",
         },
         {
-            "name": "(Windows) Attach",
-            "type": "cppvsdbg",
-            "request": "attach",
-            "processId": ""
-        },
-        {
             "name": "Python: Current File",
             "type": "debugpy",
             "request": "launch",
             "program": "${workspaceFolder}/test.py",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "(Windows) Attach",
+            "type": "cppvsdbg",
+            "request": "attach",
+            "processId": ""
+        }
+    ]
+}
+```
+
+- Linux
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python C++ Debugger",
+            "type": "pythoncpp",
+            "request": "launch",
+            "pythonLaunchName": "Python Debugger: Current File",
+            "cppAttachName": "(gdb) Attach"
+        },
+        {
+            "name": "Python Debugger: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/script",
+            "program": "test.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "(gdb) Attach",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "/home/venv/dev/bin/python",
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                },
+                {
+                    "description": "Set Disassembly Flavor to Intel",
+                    "text": "-gdb-set disassembly-flavor intel",
+                    "ignoreFailures": true
+                }
+            ]
         }
     ]
 }
