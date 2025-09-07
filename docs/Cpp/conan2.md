@@ -97,7 +97,7 @@ cmake --build .
 }
 ```
 
-### layout的作用
+#### layout的作用
 
 layout可以设置编译生成的代码布局。cmake_layout是内置的cmake布局方式，并会生成CMakePresets.json文件。
 
@@ -126,6 +126,24 @@ cmake --list-presets
 cmake --preset=conan-release
 # 指定预设进行编译
 cmake --build --preset=conan-release
+```
+
+#### 通过proxy下载依赖
+
+因为Conan底层使用requests进行网络请求，所以参考[requests官方文档](https://docs.python-requests.org/en/latest/user/advanced/#proxies)进行设置。
+
+1. 安装支持socks协议的requests包
+
+```
+pip install 'requests[socks]'
+```
+
+2. 设置环境变量
+
+```
+export HTTP_PROXY="socks5://10.10.1.10:3434"
+export HTTPS_PROXY="socks5://10.10.1.10:3434"
+export ALL_PROXY="socks5://10.10.1.10:3434"
 ```
 
 ## 其他Conan命令
