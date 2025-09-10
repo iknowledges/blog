@@ -113,37 +113,11 @@ pybind11_add_module(example main.cpp)
 
 混合调试插件[Python C++ Debugger](https://marketplace.visualstudio.com/items?itemName=benjamin-simmonds.pythoncpp-debug)配置如下：
 
-- Windows
+#### Linux
 
-```json
-{
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Python C++ Debug",
-            "type": "pythoncpp",
-            "request": "launch",
-            "pythonLaunchName": "Python: Current File",
-            "cppAttachName": "(Windows) Attach",
-        },
-        {
-            "name": "Python: Current File",
-            "type": "debugpy",
-            "request": "launch",
-            "program": "${workspaceFolder}/test.py",
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "(Windows) Attach",
-            "type": "cppvsdbg",
-            "request": "attach",
-            "processId": ""
-        }
-    ]
-}
-```
-
-- Linux
+1. 添加`Python Debugger: Current File`，添加`cwd`为python脚本所在目录，`program`修改为要调试的python脚本；
+2. 添加`(gdb) Attach`，修改program为python解析器路径；
+3. 添加`Python C++ Debugger Custom`，修改`pythonLaunchName`对应上面的`Python Debugger: Current File`，`cppAttachName`对应上面的`(gdb) Attach`。
 
 ```json
 {
@@ -187,6 +161,58 @@ pybind11_add_module(example main.cpp)
 }
 ```
 
+> 权限问题
+
+```
+Superuser access is required to attach to a process. Attaching as superuser can potentially harm your computer. Do you want to continue? [y/N]
+```
+
+输入y后不能输入密码，程序直接退出了，可以使用如下命令修改权限：
+
+```bash
+# 查看权限，默认为1
+cat /proc/sys/kernel/yama/ptrace_scope
+# 修改权限
+echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+```
+
+ptrace_scope系统调用权限说明：
+
+- 0: 经典模式，允许任何用户调试其权限范围内的进程；
+- 1: 受限模式（默认），仅允许跟踪直接派生的子进程，如父进程调试子进程；
+- 2: 管理员模式，只有root或拥有CAP_SYS_PTRACE的进程可使用ptrace；
+- 3: 完全禁用，所有进程都不能使用ptrace。
+
+#### Windows
+
+```json
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python C++ Debug",
+            "type": "pythoncpp",
+            "request": "launch",
+            "pythonLaunchName": "Python: Current File",
+            "cppAttachName": "(Windows) Attach",
+        },
+        {
+            "name": "Python: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/test.py",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "(Windows) Attach",
+            "type": "cppvsdbg",
+            "request": "attach",
+            "processId": ""
+        }
+    ]
+}
+```
+
 ## 使用Clion调试C++代码
 
 配置CMake Application如下：
@@ -204,3 +230,4 @@ pybind11_add_module(example main.cpp)
 - [Python,cpp混合编程调试方案](https://www.bilibili.com/video/BV1wV4y1p7Ak)
 - [Debug Pybind11 C++/Python mixture project with CLion](https://rancheng.github.io/Debug-pybind-within-CLion/)
 - [Debug Python extensions](https://www.jetbrains.com/help/clion/debugging-python-extensions.html#debug-custom-py)
+- [Debugging mixed Python C++ in VS Code. Can't enter sudo password](https://stackoverflow.com/questions/64832766/debugging-mixed-python-c-in-vs-code-cant-enter-sudo-password)
