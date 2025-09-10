@@ -115,7 +115,7 @@ pybind11_add_module(example main.cpp)
 
 #### Linux
 
-1. 添加`Python Debugger: Current File`，添加`cwd`为python脚本所在目录，`program`修改为要调试的python脚本；
+1. 添加`Python Debugger: Current File`，添加`cwd`为python脚本所在目录，`program`修改为要调试的python脚本，`env`设置环境变量，将`PYTHONPATH`指定为C++库文件所在的目录；
 2. 添加`(gdb) Attach`，修改program为python解析器路径；
 3. 添加`Python C++ Debugger Custom`，修改`pythonLaunchName`对应上面的`Python Debugger: Current File`，`cppAttachName`对应上面的`(gdb) Attach`。
 
@@ -136,6 +136,9 @@ pybind11_add_module(example main.cpp)
             "request": "launch",
             "cwd": "${workspaceFolder}/script",
             "program": "test.py",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/build"
+            },
             "console": "integratedTerminal"
         },
         {
