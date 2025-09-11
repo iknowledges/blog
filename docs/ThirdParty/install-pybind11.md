@@ -122,6 +122,30 @@ def get_version(s):
     return s + ":" + np.__version__
 ```
 
+#### Linux中的问题
+
+```
+[cmake] CMake Error in CMakeLists.txt:
+[cmake]   Imported target "pybind11::module" includes non-existent path
+[cmake] 
+[cmake]     "/usr/include/python3.12"
+[cmake] 
+[cmake]   in its INTERFACE_INCLUDE_DIRECTORIES.  Possible reasons include:
+[cmake] 
+[cmake]   * The path was deleted, renamed, or moved to another location.
+[cmake] 
+[cmake]   * An install or uninstall procedure did not complete successfully.
+[cmake] 
+[cmake]   * The installation package was faulty and references files it does not
+[cmake]   provide.
+```
+
+解决方法：安装pip
+
+```bash
+sudo apt install python3-pip
+```
+
 #### 参考资料
 
 - [pybind11 documentation](https://pybind11.readthedocs.io/en/stable/index.html)
