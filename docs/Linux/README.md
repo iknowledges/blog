@@ -39,3 +39,4 @@
 * [pkg-config使用教程](Linux/pkg-config-tutorial.md)
 * [Ubuntu安装中文字体](Linux/ubuntu-font.md)
 * [CMake安装教程](Linux/install-cmake.md)
+* [Sqlite3使用教程](Linux/sqlite-tutorial.md)
