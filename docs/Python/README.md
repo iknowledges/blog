@@ -11,3 +11,4 @@
 * [Python加载dll和pyd文件](Python/python-dll.md)
 * [Coqui TTS使用教程](Python/coqui-tts-tutorial.md)
 * [pybind11示例](Python/pybind11-example.md)
+* [asyncio异步编程指南](Python/asyncio-tutorial.md)
