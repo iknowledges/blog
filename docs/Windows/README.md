@@ -17,3 +17,4 @@
 * [CMD控制台设置字符编码](Windows/cmd-encoding.md)
 * [Hyper-V设置固定IP并连接外网](Windows/hyper-v-ip.md)
 * [WSL安装ArchLinux](Windows/wsl-archlinux.md)
+* [Windows Subsystem For Android安装教程](Windows/wsa-install.md)
