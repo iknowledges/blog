@@ -26,6 +26,12 @@ adb devices
 adb connect 127.0.0.1:58526
 # 安装apk
 adb install D:\download\apk\weixin.apk
+# 进入Android命令窗口
+adb shell
+# 从本地上传文件到Android
+adb push <local> <remote>
+# 从Android下载文件到本地
+adb pull <remote> <local>
 ```
 
 #### 参考资料
