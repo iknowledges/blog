@@ -8,3 +8,4 @@
 * [VSCode配置Python环境](IDE/vscode-python.md)
 * [Visual Studio Code配置](IDE/vscode-config.md)
 * [Clang-Format教程](IDE/clang-format.md)
+* [VScode编写Snippets教程](IDE/vscode-snippets.md)
