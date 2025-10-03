@@ -87,4 +87,4 @@ locale
 - [WSL的基本命令](https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands)
 - [解决win10的wsl2下Ubuntu系统里中文乱码问题](https://blog.csdn.net/weixin_39246554/article/details/123487843)
 - [WSL Install (适用于windows的Linux子系统)下载速度提升](https://www.bilibili.com/opus/989978313838559256)
-- [如何在 Windows 11 上彻底卸载 WSL](https://www.sysgeek.cn/uninstall-wsl-windows/)
+- [彻底卸载WSL步骤整理](https://zhuanlan.zhihu.com/p/1955953998516446643)
