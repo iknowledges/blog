@@ -18,6 +18,7 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
 
 - [适用于x64计算机的WSL2 Linux内核更新包](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
 - [适用于arm64计算机的WSL2 Linux内核更新包](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_arm64.msi)
+- 内核包也可以在Github下载[wsl.2.6.1.0.x64.msi或wsl.2.6.1.0.arm64.msi](https://github.com/microsoft/WSL/releases)
 
 4. 将WSL 2设置为默认版本
 
@@ -47,6 +48,8 @@ wsl --import Ubuntu D:\WSL\Ubuntu22 D:\ubuntu-backup.tar --version 2
 # 恢复之前的用户
 Ubuntu config --default-user <用户名>
 ```
+
+- `wsl --update`下载过慢优化：【打开Windows更新】->【高级选项】->【传递优化】，【允许从以下来源下载】选择【Internet和我的本地网络上的设备】。
 
 ## 常用命令
 
@@ -83,3 +86,4 @@ locale
 - [如何使用WSL在Windows上安装Linux](https://learn.microsoft.com/zh-cn/windows/wsl/install)
 - [WSL的基本命令](https://learn.microsoft.com/zh-cn/windows/wsl/basic-commands)
 - [解决win10的wsl2下Ubuntu系统里中文乱码问题](https://blog.csdn.net/weixin_39246554/article/details/123487843)
+- [WSL Install (适用于windows的Linux子系统)下载速度提升](https://www.bilibili.com/opus/989978313838559256)
