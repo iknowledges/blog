@@ -1,2 +1,2 @@
-* [QGIS教程](GIS/gis-qgis.md)
-* [GeoServer教程](GIS/gis-geoserver.md)
+* [QGIS教程](gis-qgis.md)
+* [GeoServer教程](gis-geoserver.md)
