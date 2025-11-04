@@ -58,7 +58,7 @@ sudo apt-get remove qt5*
 - http://mirrors.ustc.edu.cn/qtproject/archive/online_installers
 - https://mirrors.tuna.tsinghua.edu.cn/qt/archive/online_installers
 
-4.0.1-1后的在线安装器支持`--mirror`命令行参数。
+4.0.1-1后的在线安装器支持`--mirror`命令行参数, 可用的镜像如下：https://download.qt.io/static/mirrorlist/。
 
 ```
 ./qt-unified-linux-x64-4.6.0-online.run --mirror http://mirrors.ustc.edu.cn/qtproject
