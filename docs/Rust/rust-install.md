@@ -9,6 +9,13 @@ export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 ```
 
+注：可以通过修改`RUSTUP_HOME`和`CARGO_HOME`设置安装目录：
+
+```
+export RUSTUP_HOME=/mnt/d/Rust/linux/.rustup/
+export CARGO_HOME=/mnt/d/Rust/linux/.cargo/
+```
+
 2. 安装
 
 ```
@@ -31,8 +38,8 @@ rustup self uninstall
 
 1. 设置环境变量，自定义Rust的安装路径：
 
-- RUSTUP_HOME: `D:\Software\Rust\.rustup`
-- CARGO_HOME: `D:\Software\Rust\.cargo`
+- RUSTUP_HOME: `D:\Rust\windows\.rustup`
+- CARGO_HOME: `D:\Rust\windows\.cargo`
 
 2. 下载[rustup-init.exe](https://www.rust-lang.org/tools/install)，然后打开powershell执行下面命令进行安装：
 
