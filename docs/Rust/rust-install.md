@@ -9,11 +9,11 @@ export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
 export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
 ```
 
-注：可以通过修改`RUSTUP_HOME`和`CARGO_HOME`设置安装目录：
+注：可以通过修改`RUSTUP_HOME`和`CARGO_HOME`设置安装目录，注意路径不要以`/`结束：
 
 ```
-export RUSTUP_HOME=/mnt/d/Rust/linux/.rustup/
-export CARGO_HOME=/mnt/d/Rust/linux/.cargo/
+export RUSTUP_HOME=/mnt/d/Rust/linux/.rustup
+export CARGO_HOME=/mnt/d/Rust/linux/.cargo
 ```
 
 2. 安装
