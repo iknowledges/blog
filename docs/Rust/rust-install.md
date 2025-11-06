@@ -2,36 +2,49 @@
 
 ## Ubuntu
 
-1. 配置源，在~/.bashrc下加入如下内容：
-
-```
-export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
-export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
-```
-
-注：可以通过修改`RUSTUP_HOME`和`CARGO_HOME`设置安装目录，注意路径不要以`/`结束：
+1. 在`~/.bashrc`中添加如下内容设置安装目录，注意路径不要以`/`结束：
 
 ```
 export RUSTUP_HOME=/mnt/d/Rust/linux/.rustup
 export CARGO_HOME=/mnt/d/Rust/linux/.cargo
 ```
 
-2. 安装
+2. 在安装rustup前，先设置环境变量，`RUSTUP_DIST_SERVER`用于更新toolchain，`RUSTUP_UPDATE_ROOT`用于更新rustup：
+
+```
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+```
+
+3. 安装
 
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-3. 验证是否安装成功
+4. 验证是否安装成功
 
 ```
 rustc --version
 ```
 
-4. 卸载Rust
+5. 卸载Rust
 
 ```
 rustup self uninstall
+```
+
+6. 设置Rust Crates Registry源，新建`$CARGO_HOME/config.toml`配置文件，并添加如下内容：
+
+```
+[source.crates-io]
+replace-with = 'ustc'
+
+[source.ustc]
+registry = "sparse+https://mirrors.ustc.edu.cn/crates.io-index/"
+
+[registries.ustc]
+index = "sparse+https://mirrors.ustc.edu.cn/crates.io-index/"
 ```
 
 ## Windows
@@ -61,4 +74,5 @@ rustup self uninstall
 #### 参考资源
 
 - [Install Rust](https://www.rust-lang.org/tools/install)
-- [RUST安装慢怎么办，使用镜像方式安装](https://blog.csdn.net/u010964076/article/details/105200376)
+- [Rust Toolchain 反向代理](https://mirrors.ustc.edu.cn/help/rust-static.html)
+- [Rust Crates](https://mirrors.ustc.edu.cn/help/crates.io-index.html)
