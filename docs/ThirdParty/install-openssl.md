@@ -1,5 +1,13 @@
 # Ubuntu编译OpenSSL
 
+## apt安装OpenSSL
+
+```
+sudo apt install libssl-dev
+```
+
+## 源码安装
+
 - 官网下载[openssl-3.0.14.tar.gz](https://www.openssl.org/source/)，并解压：
 
 ```
@@ -7,7 +15,9 @@ tar -zxvf openssl-3.0.14.tar.gz
 cd openssl-3.0.14/
 ```
 
-- **编译方法一**：通过设置环境变量LD_LIBRARY_PATH，指定链接器在运行时寻找共享库的路径
+### 编译方法一
+
+通过设置环境变量LD_LIBRARY_PATH，指定链接器在运行时寻找共享库的路径
 
 1. 编译安装
 
@@ -30,7 +40,9 @@ export LD_LIBRARY_PATH="$MY_INSTALL_DIR/OpenSSL/lib64:$LD_LIBRARY_PATH"
 openssl version
 ```
 
-- **编译方法二**：通过设置可执行文件的DT_RPATH或DT_RUNPATH，来指定程序运行时链接器寻找共享库的路径
+### 编译方法二
+
+通过设置可执行文件的DT_RPATH或DT_RUNPATH，来指定程序运行时链接器寻找共享库的路径
 
 1. 编译安装
 
