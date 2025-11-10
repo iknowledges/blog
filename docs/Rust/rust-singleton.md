@@ -75,4 +75,5 @@ impl MySingleton {
 
 #### 参考资料
 
-- [Singleton in Rust](https://refactoring.guru/design-patterns/singleton/rust/example#example-0)
+- [Singleton in Rust](https://refactoring.guru/design-patterns/singleton/rust/example)
+- [Rust中的LazyLock和OnceLock](https://xring.net/lazylock-and-once-lock-in-rust/)
