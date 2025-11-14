@@ -12,3 +12,4 @@
 * [Coqui TTS使用教程](coqui-tts-tutorial.md)
 * [pybind11示例](pybind11-example.md)
 * [asyncio异步编程指南](asyncio-tutorial.md)
+* [Pytorch安装教程](pytorch-install.md)
