@@ -15,3 +15,4 @@
 * [Pytorch安装教程](pytorch-install.md)
 * [大模型下载教程](llm-download.md)
 * [DeepSeek-OCR部署教程](deepseek-ocr.md)
+* [CosyVoice部署教程](cosy-voice.md)
