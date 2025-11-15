@@ -14,3 +14,4 @@
 * [asyncio异步编程指南](asyncio-tutorial.md)
 * [Pytorch安装教程](pytorch-install.md)
 * [大模型下载教程](llm-download.md)
+* [DeepSeek-OCR部署教程](deepseek-ocr.md)
