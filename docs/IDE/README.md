@@ -9,3 +9,4 @@
 * [Visual Studio Code配置](vscode-config.md)
 * [Clang-Format教程](clang-format.md)
 * [VScode编写Snippets教程](vscode-snippets.md)
+* [Clion配置Qt开发环境](clion-qt.md)
