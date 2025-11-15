@@ -1,6 +1,7 @@
 # PyPI配置镜像源
 
-Windows在用户目录新建配置文件C:/Users/<用户名>/pip/pip.ini，内容如下：
+- Windows在用户目录创建配置文件`C:/Users/<用户名>/pip/pip.ini`
+- Linux在家目录创建配置文件`~/.pip/pip.conf`
 
 ```
 [global]
