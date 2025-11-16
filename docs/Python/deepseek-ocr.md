@@ -16,7 +16,7 @@ modelscope download --model deepseek-ai/DeepSeek-OCR --local_dir /path/to/models
 git clone https://github.com/deepseek-ai/DeepSeek-OCR.git
 ```
 
-2. 执行安装命令，需要手动下载[vllm-0.8.5](https://github.com/vllm-project/vllm/releases/tag/v0.8.5)和[flash_attn-2.7.3](https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.3/flash_attn-2.7.3+cu11torch2.6cxx11abiFALSE-cp312-cp312-linux_x86_64.whl)：
+2. 执行安装命令，需要手动下载[vllm-0.8.5](https://github.com/vllm-project/vllm/releases/download/v0.8.5/vllm-0.8.5+cu118-cp38-abi3-manylinux1_x86_64.whl)和[flash_attn-2.7.3](https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.3/flash_attn-2.7.3+cu11torch2.6cxx11abiFALSE-cp312-cp312-linux_x86_64.whl)：
 
 ```
 # 创建虚拟环境
