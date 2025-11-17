@@ -1,5 +1,6 @@
 * [主页](/README.md)
 * [人工智能](/AI/README.md)
+* [大模型](/LLM/README.md)
 * [Linux](/Linux/README.md)
 * [Windows](/Windows/README.md)
 * [Docker](/Docker/README.md)

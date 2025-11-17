@@ -67,7 +67,7 @@ res = model.infer(tokenizer, prompt=prompt, image_file=image_file, output_path =
 
 - vllm
 
-安装新版的[vllm](https://docs.vllm.ai/projects/recipes/en/latest/DeepSeek/DeepSeek-OCR.html#installing-vllm)，注意这里会自动卸载掉上面的vllm-0.8.5
+安装新版的[vllm](https://docs.vllm.ai/projects/recipes/en/latest/DeepSeek/DeepSeek-OCR.html#installing-vllm)，注意这里会自动卸载掉上面的vllm-0.8.5，所以最好另外创建一个虚拟环境。
 
 ```
 pip install -U vllm --pre --extra-index-url https://wheels.vllm.ai/nightly --extra-index-url https://download.pytorch.org/whl/cu118
