@@ -2,4 +2,5 @@
 * [Coqui TTS使用教程](coqui-tts-tutorial.md)
 * [DeepSeek-OCR部署教程](deepseek-ocr.md)
 * [MinerU部署教程](mineru-tutorial.md)
+* [PaddleOCR-VL部署教程](paddleocr-vl.md)
 * [CosyVoice部署教程](cosy-voice.md)
