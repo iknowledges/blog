@@ -24,18 +24,22 @@ from pathlib import Path
 import argparse
 import whisper
 
-
-def audio_to_speech(directory, lang):
+def audio_to_speech(directory, lang, overwrite):
     """
     directory: path to audio
     lang: en zh
     """
     p = Path(directory)
     model = whisper.load_model("large")
-    for child in p.iterdir():
-        if child.suffix in [".mp4", ".avi"]:
-            result = model.transcribe(child.as_posix(), language=lang, verbose=True)
-            save_file = child.with_suffix('.srt')
+    for root, dirs, files in p.walk():
+        for file in files:
+            if file.suffix not in [".mp4", ".avi"]:
+                continue
+            audio_file = root / file
+            save_file = audio_file.with_suffix('.srt')
+            if save_file.is_file() and not overwrite:
+                continue
+            result = model.transcribe(audio_file.as_posix(), language=lang, verbose=True)
             save_srt(save_file, result["segments"])
 
 def format_seconds(seconds):
@@ -72,8 +76,9 @@ def main():
     parser = argparse.ArgumentParser(prog='Whisper')
     parser.add_argument('directory')
     parser.add_argument('--lang', default='zh')
+    parser.add_argument('--overwrite', action='store_true')
     args = parser.parse_args()
-    audio_to_speech(args.directory, args.lang)
+    audio_to_speech(args.directory, args.lang, args.overwrite)
 
 if __name__ == '__main__':
     main()
