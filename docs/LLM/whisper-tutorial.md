@@ -33,9 +33,9 @@ def audio_to_speech(directory, lang, overwrite):
     model = whisper.load_model("large")
     for root, dirs, files in p.walk():
         for file in files:
-            if file.suffix not in [".mp4", ".avi"]:
-                continue
             audio_file = root / file
+            if audio_file.suffix not in [".mp4", ".avi"]:
+                continue
             save_file = audio_file.with_suffix('.srt')
             if save_file.is_file() and not overwrite:
                 continue
