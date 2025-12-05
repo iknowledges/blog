@@ -132,6 +132,20 @@ int main() {
 }
 ```
 
+## MySQL中的CMakeList.txt
+
+```
+# PostgreSQL
+find_package(libmysqlclient REQUIRED)
+message(STATUS "Using libmysqlclient ${libmysqlclient_VERSION}")
+
+# Sqlpp11
+find_package(Sqlpp11 CONFIG REQUIRED)
+message(STATUS "Using Sqlpp11 ${Sqlpp11_VERSION}")
+
+target_link_libraries(${PROJECT_NAME} PRIVATE libmysqlclient::libmysqlclient sqlpp11::sqlpp11)
+```
+
 #### 参考资料
 
 - [sqlpp11](https://github.com/rbock/sqlpp11)
