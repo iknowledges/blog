@@ -18,3 +18,4 @@
 * [Hyper-V设置固定IP并连接外网](hyper-v-ip.md)
 * [WSL安装ArchLinux](wsl-archlinux.md)
 * [Windows Subsystem For Android安装教程](wsa-install.md)
+* [WSL2配置端口转发](wsl-port.md)
