@@ -111,3 +111,11 @@ def main():
 if __name__ == '__main__':
     main()
 ```
+
+## Web页面
+
+```
+python3 ./webui.py --port 50000 --model_dir pretrained_models/CosyVoice2-0.5B
+```
+
+- [使用CosyVoice2-0.5B模型webui预训练音色不显示](https://github.com/FunAudioLLM/CosyVoice/issues/738)
