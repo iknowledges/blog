@@ -1,4 +1,5 @@
 * [Conan2使用教程](conan2.md)
+* [Conan的可编辑模式](Cpp/conan-editable.md)
 * [C++的lambda表达式](cpp-lambda.md)
 * [cmake常用函数](cmake-function.md)
 * [Qt安装MSVC2017编译器](qt-msvc2017.md)
