@@ -23,3 +23,4 @@
 * [ZeroMQ源码编译安装教程](install-zeromq.md)
 * [PostgreSQL安装教程](install-postgresql.md)
 * [Drogon源码编译安装教程](install-drogon.md)
+* [Conan安装Drogon教程](conan-drogon.md)
