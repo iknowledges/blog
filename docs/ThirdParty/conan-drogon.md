@@ -11,22 +11,46 @@ conan inspect ~/.conan2/p/drogo7178f7ce738fb/e/
 2. 修改自己项目下的conanfile.py：
 
 ```python
+import os
 from conan import ConanFile
-from conan.tools.cmake import cmake_layout
+from conan.tools.cmake import CMakeToolchain, CMakeDeps
+from conan.tools.env import VirtualRunEnv
 
 
 class DrogonRecipe(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
-    generators = "CMakeDeps", "CMakeToolchain"
 
     def requirements(self):
-        self.requires("drogon/1.9.11", options={"with_mysql": True, "with_yaml_cpp": True})
+        self.requires("drogon/1.9.11", options={"with_mysql": True, "with_yaml_cpp": True, "with_boost": False})
+    
+    def generate(self):
+        # 获取drogon_ctl所在目录
+        drogon_pkg = self.dependencies["drogon"]
+        drogon_bin_path = os.path.join(drogon_pkg.package_folder, "bin")
+        # 将drogon_ctl添加到环境变量PATH
+        ms = VirtualRunEnv(self)
+        env = ms.environment()
+        env.append_path("PATH", drogon_bin_path)
+        ms.generate()
+
+        deps = CMakeDeps(self)
+        deps.generate()
+        tc = CMakeToolchain(self)
+        tc.generate()
 ```
 
 3. 编译安装依赖
 
 ```
 conan install . --output-folder=cmake-build-debug/ --profile=debug --build=drogon/1.9.11
+```
+
+4. 使用drogon_ctl
+
+```
+source cmake-build-debug/conanrun.sh
+drogon_ctl version
+source cmake-build-debug/deactivate_conanrun.sh
 ```
 
 ## 问题解决
