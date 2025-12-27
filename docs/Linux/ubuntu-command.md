@@ -154,3 +154,10 @@ find /usr -type f -name "*.cmake"
 
 - -type f：用于指定查找文件；
 - -name "*.cmake"：指定匹配以.cmake结尾的文件名。
+
+#### ps
+
+```
+# 查看特定进程的CPU使用情况
+ps -p <PID> -o pid,comm,%cpu,%mem
+```
