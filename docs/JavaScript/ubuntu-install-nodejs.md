@@ -1,5 +1,54 @@
 # Ubuntu安装nodejs
 
+## 使用 Node Version Manager (nvm) 安装
+
+1. 运行安装命令：
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
+```
+
+如果下载太慢可以先下载好install.sh脚本，然后修改NVM_SOURCE_URL：
+
+```
+# NVM_SOURCE_URL="https://github.com/${NVM_GITHUB_REPO}.git"
+NVM_SOURCE_URL="https://gitee.com/mirrors/nvm.git"
+```
+
+最后执行安装脚本：
+
+```
+bash install.sh
+```
+
+2. 添加环境变量：
+
+```
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+```
+
+3. 测试nvm是否安装成功：
+
+```
+source ~/.bash_profile
+nvm -v
+```
+
+4. 安装Node：
+
+```
+nvm install node
+```
+
+5. 验证安装是否成功，检查Node版本：
+
+```
+node --version
+```
+
+## 通过二进制包安装
+
 1. 下载二进制安装包并解压：https://nodejs.org/en/download
 
 ```
@@ -35,4 +84,5 @@ npm config set registry https://registry.npmjs.org/
 
 #### 参考资料
 
-[Installation](https://github.com/nodejs/help/wiki/Installation)
+- [Installation](https://github.com/nodejs/help/wiki/Installation)
+- [Node Version Manager](https://github.com/nvm-sh/nvm)
