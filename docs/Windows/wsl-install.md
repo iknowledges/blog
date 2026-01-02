@@ -81,6 +81,10 @@ sudo dpkg-reconfigure locales
 locale
 ```
 
+- wsl: 检测到 localhost 代理配置，但未镜像到 WSL。NAT 模式下的 WSL 不支持 localhost 代理。
+
+打开应用【WSL Settings】，找到【网络】->【网络模式】，将【Nat】换成【Mirrored】，然后重启WSL。
+
 #### 参考资源
 
 - [如何使用WSL在Windows上安装Linux](https://learn.microsoft.com/zh-cn/windows/wsl/install)
