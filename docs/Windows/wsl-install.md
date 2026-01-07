@@ -53,6 +53,12 @@ Ubuntu config --default-user <用户名>
 
 ## 常用命令
 
+- 查看WSL在Windows中的位置，使用PowerShell执行下面命令：
+
+```
+Get-ChildItem -Path "$env:LOCALAPPDATA\Packages" | Where-Object { $_.Name -match "Ubuntu|Debian|Fedora" }
+```
+
 - 导入和导出发行版
 
 ```
@@ -92,3 +98,4 @@ locale
 - [解决win10的wsl2下Ubuntu系统里中文乱码问题](https://blog.csdn.net/weixin_39246554/article/details/123487843)
 - [WSL Install (适用于windows的Linux子系统)下载速度提升](https://www.bilibili.com/opus/989978313838559256)
 - [彻底卸载WSL步骤整理](https://zhuanlan.zhihu.com/p/1955953998516446643)
+- [Where Are WSL2 Files Physically Stored? [And How to Relocate Them]](https://linuxvox.com/blog/where-are-the-files-inside-wsl2-physically-stored/)
