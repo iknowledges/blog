@@ -5,8 +5,9 @@
 1. 在`~/.bashrc`中添加如下内容设置安装目录，注意路径不要以`/`结束：
 
 ```
-export RUSTUP_HOME=/mnt/d/Rust/linux/.rustup
-export CARGO_HOME=/mnt/d/Rust/linux/.cargo
+# 默认安装目录
+export RUSTUP_HOME=~/.rustup
+export CARGO_HOME=~/.cargo
 ```
 
 2. 在安装rustup前，先设置环境变量，`RUSTUP_DIST_SERVER`用于更新toolchain，`RUSTUP_UPDATE_ROOT`用于更新rustup：
