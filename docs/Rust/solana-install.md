@@ -59,8 +59,6 @@ anchor --version
 
 #### 通过AVM安装Anchor CLI
 
-注意：实践中到第4步失败了
-
 1. 安装Anchor Version Manager (AVM)
 
 ```
