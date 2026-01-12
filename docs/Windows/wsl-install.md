@@ -51,6 +51,13 @@ Ubuntu config --default-user <用户名>
 
 - `wsl --update`下载过慢优化：【打开Windows更新】->【高级选项】->【传递优化】，【允许从以下来源下载】选择【Internet和我的本地网络上的设备】。
 
+- 如果命令恢复默认用户失败，可以直接修改配置文件`/etc/wsl.conf`，添加如下内容：
+
+```
+[user]  
+default=<username>
+```
+
 ## 常用命令
 
 - 查看WSL在Windows中的位置，使用PowerShell执行下面命令：
