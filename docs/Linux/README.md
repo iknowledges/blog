@@ -40,3 +40,4 @@
 * [Ubuntu安装中文字体](ubuntu-font.md)
 * [CMake安装教程](install-cmake.md)
 * [Sqlite3使用教程](sqlite-tutorial.md)
+* [命令行网络代理设置](network-proxy.md)
