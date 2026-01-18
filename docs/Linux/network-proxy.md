@@ -130,3 +130,4 @@ proxy_off.bat
 #### 参考链接
 
 - [命令行使用代理](https://fiix.one/docs/os/%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86/)
+- [常用http/https以及socks5代理总结](https://www.cnblogs.com/hupeng1234/p/9783336.html)
