@@ -170,11 +170,18 @@ git cherry-pick <commit-id>
 
 如仓库有master和feature两个分支，现将feature上的某次提交同步到master分支
 ```
-# 在feature分支上查看提交日志
-git log
-# 切换到master分支合并
+# 1.切换到master分支合并
 git checkout master
-git cherry-pick <commit-id>
+# 2.拉取最新代码
+git pull origin master
+# 3.查看feature分支上提交日志
+git log feature --oneline
+# 4.挑选某个提交
+git cherry-pick c3d4e5f
+# 也可以选择多个
+git cherry-pick c3d4e5f b2c3d4e
+# 5.推送更改
+git push origin master
 ```
 
 #### 其他命令
