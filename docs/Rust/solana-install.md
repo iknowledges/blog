@@ -1,8 +1,22 @@
 # Solana开发环境安装
 
-首先要安装好Rust，这里略过了。
+## 快速安装
 
-## 安装Solana CLI
+```
+sudo apt-get update
+sudo apt-get install -y \
+    build-essential \
+    pkg-config \
+    libudev-dev llvm libclang-dev \
+    protobuf-compiler libssl-dev
+curl --proto '=https' --tlsv1.2 -sSfL https://solana-install.solana.workers.dev | bash
+# Verify
+rustc --version && solana --version && anchor --version && surfpool --version && node --version && yarn --version
+```
+
+## 一、安装Rust，这里略过了。
+
+## 二、安装Solana CLI
 
 1. 安装 Solana CLI 工具套件：
 
@@ -34,7 +48,7 @@ solana --version
 agave-install update
 ```
 
-## 安装Anchor CLI
+## 三、安装Anchor CLI
 
 前置条件：安装Node和Yarn
 
