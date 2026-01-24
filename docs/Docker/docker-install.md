@@ -60,11 +60,13 @@ sudo nvidia-ctk runtime configure --runtime=docker
 }
 ```
 
-4. 最后使用如下命令查看Docker配置是否生效：
+然后使用如下命令查看Docker配置是否生效：
 
 ```
 docker info
 ```
+
+4. 修改【Resouces】=>【Disk image location】，点击【Browse】然后选择一个非C盘文件夹即可。
 
 #### 参考链接：
 
