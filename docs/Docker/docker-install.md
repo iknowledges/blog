@@ -48,7 +48,7 @@ sudo nvidia-ctk runtime configure --runtime=docker
 
 1. 安装WSL
 2. 安装Docker Desktop
-3. 配置国内镜像，找到【Settings】=>【Docker Engine】，添加registry-mirrors：
+3. 配置[国内镜像加速](https://github.com/dongyubin/DockerHub)，找到【Settings】=>【Docker Engine】，添加registry-mirrors：
 
 ```
 {
