@@ -1,4 +1,4 @@
-* [ubuntu安装docker](docker-install.md)
+* [Docker安装教程](docker-install.md)
 * [Docker中安装xfce](docker-ubuntu-xfce.md)
 * [Ubuntu在Docker中运行GUI程序](docker-ubuntu-gui.md)
 * [Mac在Docker中运行GUI程序](docker-mac-gui.md)
