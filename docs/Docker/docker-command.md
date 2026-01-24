@@ -27,4 +27,7 @@ docker start my-ubuntu
 docker stop my-ubuntu
 # 重启容器
 docker restart my-ubuntu
+# 拷贝文件或目录
+docker cp my-ubuntu:/opt/test.txt /opt/
+docker cp /opt/test.txt my-ubuntu:/opt/
 ```
