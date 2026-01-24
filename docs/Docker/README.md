@@ -6,3 +6,5 @@
 * [docker compose使用教程](docker-compose.md)
 * [Docker离线部署](docker-install-offline.md)
 * [修改Docker存储路径](docker-data-root.md)
+* [docker上传镜像到仓库](docker-image.md)
+* [docker部署ubuntu并远程连接ssh](docker-remote.md)
