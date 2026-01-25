@@ -30,4 +30,6 @@ docker restart my-ubuntu
 # 拷贝文件或目录
 docker cp my-ubuntu:/opt/test.txt /opt/
 docker cp /opt/test.txt my-ubuntu:/opt/
+# 将Windows上的D:\my_code共享到容器里的/home/code目录
+docker run -d -v D:\my_code:/home/code ubuntu:noble
 ```
