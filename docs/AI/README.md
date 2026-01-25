@@ -1,3 +1,4 @@
+* [Claude Code安装教程](claude-code-install.md)
 * [ChatGPT的底层逻辑](chatgpt-logic.md)
 * [Transformer模型](transformer.md)
 * [BERT从零详细解读](bert.md)
