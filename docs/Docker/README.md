@@ -9,3 +9,4 @@
 * [docker上传镜像到仓库](docker-image.md)
 * [docker部署ubuntu并远程连接ssh](docker-remote.md)
 * [常用Docker命令](docker-command.md)
+* [使用docker compose安装solana开发环境](docker-compose-solana.md)
