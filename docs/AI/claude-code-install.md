@@ -1,5 +1,7 @@
 # Claude Code安装教程
 
+## 命令行中使用
+
 1. 参考[Claude Code Docs](https://code.claude.com/docs/zh-CN/setup)进行安装：
 
 - macOS, Linux, WSL中安装
@@ -53,4 +55,30 @@ claude
         "HTTPS_PROXY": "http://127.0.0.1:1080"
     }
 }
+```
+
+## VSCode中使用
+
+1. 在扩展中安装Claude Code for VS Code
+2. 修改∼/.claude/config.json
+
+```json
+{
+    "primaryApiKey": "self"
+}
+```
+
+3. 在VSCode的settings.json中添加：
+
+```json
+"claudeCode.environmentVariables": [
+    {
+        "name": "ANTHROPIC_AUTH_TOKEN",
+        "value": "你的APY KEY"
+    },
+    {
+        "name": "ANTHROPIC_BASE_URL",
+        "value": "https://api.moonshot.cn/anthropic/"
+    }
+]
 ```
