@@ -45,5 +45,5 @@ service ssh start
 ```
 5. 本机连接ssh测试
 ```
-ssh root@127.0.0.1 -p 22
+ssh root@0.0.0.0 -p 22
 ```
