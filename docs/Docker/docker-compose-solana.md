@@ -13,6 +13,7 @@ RUN useradd -m -s /bin/bash -G sudo admin \
 USER admin
 WORKDIR /home/admin
 RUN sudo apt-get install -y vim net-tools wget curl git openssh-server
+# 安装Solana
 RUN sudo apt-get install -y \
     build-essential \
     pkg-config \
@@ -43,12 +44,16 @@ services:
 ```
 # 构建镜像
 docker-compose build
-# 启动指定容器
+# 启动指定容器，注意这个命令端口映射不会生效
 docker-compose run --rm ubuntu24
-# 启动所有容器
+# 初始化并启动所有容器
 docker-compose up -d
+# 停止并删除容器
+docker-compose down
+# 启动容器
+docker-compose start
+# 停止容器
+docker-compose stop
 # 进入容器
 docker exec -it ubuntu24 bash
-# 停止容器
-docker-compose down
 ```
