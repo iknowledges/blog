@@ -28,6 +28,7 @@ RUN curl --proto '=https' --tlsv1.2 -sSfL https://solana-install.solana.workers.
 version: '3.8'
 services:
   ubuntu24:
+    # 使用当前目录下的Dockerfile构建镜像
     build: .
     container_name: ubuntu24-dev
     ports:
@@ -35,7 +36,10 @@ services:
       - "8899:8899"
       - "8900:8900"
     volumes:
-      - .:/home/admin/workspace
+      - ../DockerProject:/home/admin/workspace
+    working_dir: /home/admin/workspace
+    # 保持标准输入打开并分配伪终端（tty）
+    # 使容器可以运行交互式命令行程序
     tty: true
 ```
 
