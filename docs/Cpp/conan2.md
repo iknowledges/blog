@@ -151,6 +151,7 @@ export ALL_PROXY="socks5://10.10.1.10:3434"
 ```bash
 # 列出所有已安装的依赖
 conan list '*'
+conan list "boost/*"
 # 删除指定依赖
 conan remove boost/1.79.0
 # 查看依赖的安装路径
