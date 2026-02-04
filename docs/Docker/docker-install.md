@@ -1,4 +1,6 @@
-# ubuntu安装docker
+# Docker安装教程
+
+## Ubuntu
 
 1. 安装docker
 
@@ -42,8 +44,31 @@ sudo apt-get install -y nvidia-container-toolkit
 sudo nvidia-ctk runtime configure --runtime=docker
 ```
 
-## 参考链接：
+## Windows
 
-[Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+1. 安装WSL
+2. 安装Docker Desktop
+3. 配置[国内镜像加速](https://github.com/dongyubin/DockerHub)，找到【Settings】=>【Docker Engine】，添加registry-mirrors：
 
-[Installation Guide — NVIDIA Cloud Native Technologies  documentation](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker)
+```
+{
+  "registry-mirrors": [
+    "https://docker.mirrors.ustc.edu.cn",
+    "http://hub-mirror.c.163.com",
+    "https://registry.docker-cn.com"
+  ]
+}
+```
+
+然后使用如下命令查看Docker配置是否生效：
+
+```
+docker info
+```
+
+4. 修改【Resouces】=>【Disk image location】，点击【Browse】然后选择一个非C盘文件夹即可。
+
+#### 参考链接：
+
+- [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
+- [Installation Guide — NVIDIA Cloud Native Technologies  documentation](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker)

@@ -1,4 +1,4 @@
-* [ubuntu安装docker](docker-install.md)
+* [Docker安装教程](docker-install.md)
 * [Docker中安装xfce](docker-ubuntu-xfce.md)
 * [Ubuntu在Docker中运行GUI程序](docker-ubuntu-gui.md)
 * [Mac在Docker中运行GUI程序](docker-mac-gui.md)
@@ -6,3 +6,7 @@
 * [docker compose使用教程](docker-compose.md)
 * [Docker离线部署](docker-install-offline.md)
 * [修改Docker存储路径](docker-data-root.md)
+* [docker上传镜像到仓库](docker-image.md)
+* [docker部署ubuntu并远程连接ssh](docker-remote.md)
+* [常用Docker命令](docker-command.md)
+* [使用docker compose安装solana开发环境](docker-compose-solana.md)
