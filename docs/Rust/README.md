@@ -3,3 +3,4 @@
 * [Rust单例模式](rust-singleton.md)
 * [Tokio中的四种Channel](tokio-channel.md)
 * [Solana开发环境安装](solana-install.md)
+* [Solana常用命令](solana-command.md)
