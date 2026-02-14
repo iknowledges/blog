@@ -6,3 +6,4 @@
 * [什么是聚集索引](clustered-index.md)
 * [MySQL存储过程](mysql-procedure.md)
 * [MySQL迁移data文件夹](mysql-datadir.md)
+* [PostgreSQL安装教程](postgresql-install.md)
