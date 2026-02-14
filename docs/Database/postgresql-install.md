@@ -82,8 +82,23 @@ Shall the new role be allowed to create more new roles? (y/n) n
 psql
 # 修改admin用户密码
 ALTER USER admin WITH ENCRYPTED PASSWORD '123456';
+# 赋予public模式下的权限
+GRANT CREATE ON SCHEMA public TO admin;
 # 退出然后重启服务
 \q
+```
+
+4. 删除用户
+
+```
+dropuser admin
+```
+
+5. 查看所有用户
+
+```
+psql
+\du
 ```
 
 #### 参考资料
