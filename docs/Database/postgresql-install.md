@@ -39,7 +39,7 @@ port = 5432
 sudo vim /etc/postgresql/16/main/pg_hba.conf
 ```
 
-配置如下：
+配置如下，`0.0.0.0/0`代表允许所有IP访问：
 
 ```
 # TYPE  DATABASE  USER  ADDRESS         METHOD
@@ -99,6 +99,13 @@ dropuser admin
 ```
 psql
 \du
+```
+
+## 五、其他命令
+
+```
+# 查看pg_hba.conf文件路径
+SHOW hba_file;
 ```
 
 #### 参考资料
