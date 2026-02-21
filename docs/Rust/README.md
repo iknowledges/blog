@@ -5,3 +5,4 @@
 * [Solana开发环境安装](solana-install.md)
 * [Solana常用命令](solana-command.md)
 * [Tonic使用教程](tonic-tutorial.md)
+* [Rust Workspace教程](rust-workspace.md)
