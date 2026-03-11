@@ -5,3 +5,4 @@
 * [反向传播算法](backpropagation.md)
 * [使用LLMs进行生成](generation-with-llms.md)
 * [微调预训练模型](fine-tune-model.md)
+* [Build an MCP server](mcp-server.md)
