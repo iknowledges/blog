@@ -13,3 +13,4 @@
 * [asyncio异步编程指南](asyncio-tutorial.md)
 * [Pytorch安装教程](pytorch-install.md)
 * [OpenAI使用教程](openai-proxy.md)
+* [Python Packaging Tutorial](python-package.md)
