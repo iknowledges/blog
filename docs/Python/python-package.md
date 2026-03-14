@@ -65,6 +65,16 @@ from sample.simple import add_one
 print(add_one(10))
 ```
 
+## Uploading your Project to PyPI
+
+```
+pip install build twine
+# Packaging your project
+python -m build --sdist
+# Upload to PyPi
+twine upload dist/*
+```
+
 #### Reference
 
 - [Packaging and distributing projects](https://packaging.python.org/en/latest/guides/distributing-packages-using-setuptools/)
