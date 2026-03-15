@@ -4,6 +4,7 @@
 
 * [人工智能](/AI/README.md)
 * [大模型](/LLM/README.md)
+* [Blockchain](/Blockchain/README.md)
 * [Linux](/Linux/README.md)
 * [Windows](/Windows/README.md)
 * [Docker](/Docker/README.md)
