@@ -14,3 +14,4 @@
 * [Pytorch安装教程](pytorch-install.md)
 * [OpenAI使用教程](openai-proxy.md)
 * [Python Packaging Tutorial](python-package.md)
+* [Decorator](python-decorator.md)
