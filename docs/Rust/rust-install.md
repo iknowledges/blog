@@ -29,10 +29,15 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustc --version
 ```
 
-5. 卸载Rust
+5. 其他命令
 
 ```
+# 查看版本
+rustc --version
+# 卸载Rust
 rustup self uninstall
+# 升级Rust
+rustup update
 ```
 
 6. 设置Rust Crates Registry源，新建`$CARGO_HOME/config.toml`配置文件，并添加如下内容：
@@ -61,15 +66,6 @@ index = "sparse+https://mirrors.ustc.edu.cn/crates.io-index/"
 $env:RUSTUP_DIST_SERVER="https://mirrors.ustc.edu.cn/rust-static"
 $env:RUSTUP_UPDATE_ROOT="https://mirrors.ustc.edu.cn/rust-static/rustup"
 .\rustup-init.exe
-```
-
-3. 其他命令
-
-```
-# 查看版本
-rustc --version
-# 卸载Rust
-rustup self uninstall
 ```
 
 #### 参考资源
