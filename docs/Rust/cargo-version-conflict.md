@@ -1,6 +1,8 @@
 # Cargo Version Conflict
 
-- Problem:
+## anchor
+
+1. Problem:
 
 ```
 Caused by:
@@ -14,7 +16,7 @@ Caused by:
   See https://doc.rust-lang.org/nightly/cargo/reference/unstable.html#edition-2024 for more information about the status of this feature.
 ```
 
-- Solution:
+Solution:
 
 ```
 $ cargo update -p blake3 --precise 1.8.2
