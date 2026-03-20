@@ -6,3 +6,4 @@
 * [Solana常用命令](solana-command.md)
 * [Tonic使用教程](tonic-tutorial.md)
 * [Rust Workspace教程](rust-workspace.md)
+* [Cargo Version Conflict](cargo-version-conflict.md)
