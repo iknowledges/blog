@@ -1,6 +1,14 @@
 # Build an MCP server
 
-1. Add `weather.py` at project's root directory.
+## Create MCP server
+
+1. Install python library.
+
+```
+pip install "mcp[cli]"
+```
+
+2. Add `weather.py` at project's root directory.
 
 ```python
 from typing import Any
@@ -100,7 +108,9 @@ if __name__ == "__main__":
     main()
 ```
 
-2. Add `.mcp.json` file in project's root directory.
+## Use MCP server
+
+1. Add `.mcp.json` file in project's root directory.
 
 ```json
 {
@@ -115,7 +125,7 @@ if __name__ == "__main__":
 }
 ```
 
-3. Use following command to start Claude Code at root directory:
+2. Use following command to start Claude Code at root directory:
 
 ```
 # check mcp server
@@ -124,7 +134,7 @@ claude mcp list
 claude
 ```
 
-4. Input following questions and wait for AI to answer through mcp server:
+3. Input following questions and wait for AI to answer through mcp server:
 
 ```
 Use weather to find the weather in NY
