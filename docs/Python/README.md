@@ -15,3 +15,4 @@
 * [OpenAI使用教程](openai-proxy.md)
 * [Python Packaging Tutorial](python-package.md)
 * [Decorator](python-decorator.md)
+* [安装Python-LZO](python-lzo-install.md)
