@@ -16,3 +16,4 @@
 * [Python Packaging Tutorial](python-package.md)
 * [Decorator](python-decorator.md)
 * [安装Python-LZO](python-lzo-install.md)
+* [Anki开发教程](anki-addon-develop.md)
