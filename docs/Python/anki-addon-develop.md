@@ -88,6 +88,25 @@ python .\runanki.py
 
 此时打开【Browse】->【Edit】下就会出现【Update Cards】按钮
 
+## 安装第三方的Python库
+
+1. 打开【Help】->【About Anki】查看python版本
+
+2. 安装依赖
+
+```
+pip install numpy -t .\src\my-addon\vendor
+```
+
+3. 在`__init__.py`文件中添加
+
+```python
+addon_path = os.path.dirname(__file__)
+vendor_path = os.path.join(addon_path, "vendor")
+if vendor_path not in sys.path:
+    sys.path.append(vendor_path)
+```
+
 #### 参考资料
 
 - [Writing Anki Add-ons](https://addon-docs.ankiweb.net/)
