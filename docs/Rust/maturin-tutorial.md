@@ -16,6 +16,41 @@ uv pip install maturin
 maturin init
 ```
 
+- Cargo.toml
+
+```
+[package]
+name = "my-project"
+version = "0.1.0"
+edition = "2024"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "my_project"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = "0.28.2"
+```
+
+- pyproject.toml
+
+```
+[build-system]
+requires = ["maturin>=1.13,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "my-project"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+dynamic = ["version"]
+```
+
 3. edit `src/lib.rs`
 
 ```rust
