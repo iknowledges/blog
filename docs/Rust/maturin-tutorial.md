@@ -84,9 +84,11 @@ mod my_project {
 4. build the project
 
 ```
-# build the cate and install module in current virtualenv
+# Build the cate and install module in current virtualenv
 maturin develop
-# build the wheels
+# Explicitly point to the manifest
+maturin develop -m <path-to-crate>/Cargo.toml
+# Build the wheels
 maturin build
 ```
 
