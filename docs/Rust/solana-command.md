@@ -1,15 +1,32 @@
 # Solana常用命令
 
 ```
+# Run local validator
+solana config set -ul
 solana-test-validator
 
+# Get current configuration
 solana config get
+# Change CLI cluster (validators)
+solana config set --url mainnet-bata
 solana config set --url devnet
 solana config set --url localhost
-solana-keygen new
-solana address
-solana airdrop 2
+solana config set --url testnet
 
+# Create a wallet
+solana-keygen new
+# Check wallet address
+solana address
+# Airdrop SOL (Devnet)
+solana config set -ud
+solana airdrop 2
+# Check balance
+solana balance
+```
+
+## Anchor命令
+
+```
 anchor init test-hello-world
 cd test-hello-world
 anchor build
