@@ -6,3 +6,4 @@
 * [GitBook教程](gitbook-tutorial.md)
 * [Electron离线打包教程](electron-offline.md)
 * [React入门教程](react-tutorial.md)
+* [shadcn/ui安装教程](shadcn-install.md)
