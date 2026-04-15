@@ -106,6 +106,14 @@ psql
 ```
 # 查看pg_hba.conf文件路径
 SHOW hba_file;
+# 创建数据库
+CREATE DATABASE database_name;
+# 查看数据库
+\l
+# 连接到指定数据库
+\c database_name
+# 给admin用户授予当前数据库的权限
+GRANT CREATE ON SCHEMA public TO admin;
 ```
 
 #### 参考资料
