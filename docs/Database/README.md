@@ -8,3 +8,4 @@
 * [MySQL迁移data文件夹](mysql-datadir.md)
 * [PostgreSQL安装教程](postgresql-install.md)
 * [Install TimescaleDB](timescaldb-install.md)
+* [MongoDB安装教程](mongodb-install.md)
