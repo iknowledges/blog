@@ -48,6 +48,24 @@ settings.json可以进行全局设置，也可以在.vscode目录下进行临时
 - debugConfig: args是调试目标程序时在`int main(int argc, char *argv[])`中传入的参数。
 - outputLogEncoding: 设置OUTPUT窗口的字符编码。
 
+## 网络代理设置
+
+```json
+{
+    "http.proxy": "http://127.0.0.1:7890",
+    "http.proxyStrictSSL": false,
+    "http.systemCertificates": false,
+    "terminal.integrated.env.windows": {
+        "ALL_PROXY": "http://127.0.0.1:7890",
+        "NO_PROXY": "localhost,127.0.0.1"
+    },
+    "terminal.integrated.env.linux": {
+        "ALL_PROXY": "http://127.0.0.1:7890",
+        "NO_PROXY": "localhost,127.0.0.1"
+    }
+}
+```
+
 ## 其他设置
 
 - 设置临时环境变量
