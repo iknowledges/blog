@@ -11,3 +11,4 @@
 * [FFmpeg安装教程](ffmpeg-install.md)
 * [drawio开发笔记](drawio-debug.md)
 * [ClickHouse安装教程](clickhouse-install.md)
+* [Kafka安装教程](kafka-install.md)
