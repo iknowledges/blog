@@ -39,20 +39,35 @@ HkDj0tQqTMmx9vKSbGj-bQ
 1. 新建topic：
 
 ```
-.\bin\windows\kafka-topics.bat --create --topic test-topic --bootstrap-server localhost:9092
+kafka-topics.bat --create --topic test-topic --bootstrap-server localhost:9092
 ```
 
 2. 创建生产者：
 
 ```
-.\bin\windows\kafka-console-producer.bat --topic test-topic --bootstrap-server localhost:9092
+kafka-console-producer.bat --topic test-topic --bootstrap-server localhost:9092
 ```
 
 3. 创建消费者：
 
 ```
-.\bin\windows\kafka-console-consumer.bat --topic test-topic --from-beginning --bootstrap-server localhost:9092
+kafka-console-consumer.bat --topic test-topic --from-beginning --bootstrap-server localhost:9092
 ```
+
+## 其他命令
+
+```
+# 列出所有topic
+kafka-topics.bat --bootstrap-server localhost:9092 --list
+# 查看某个topic信息
+kafka-topics.bat --bootstrap-server localhost:9092 --topic test-topic --describe
+# 修改topic分区数量
+kafka-topics.bat --bootstrap-server localhost:9092 --topic test-topic -alter --partitions 12
+# 删除topic
+kafka-topics.bat --bootstrap-server localhost:9092 --topic test-topic --delete
+```
+
+注意：删除操作可能会造成kafka服务崩溃，需要删除kraft-combined-logs目录下对应topic的文件夹才能恢复。
 
 #### 参考资料
 
