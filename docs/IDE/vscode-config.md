@@ -48,6 +48,18 @@ settings.json可以进行全局设置，也可以在.vscode目录下进行临时
 - debugConfig: args是调试目标程序时在`int main(int argc, char *argv[])`中传入的参数。
 - outputLogEncoding: 设置OUTPUT窗口的字符编码。
 
+## Rust插件设置
+
+```json
+{
+    "rust-analyzer.linkedProjects": [
+        "./child_directory/Cargo.toml"
+    ]
+}
+```
+
+- linkedProjects: 指定rust项目加载的Cargo.toml配置文件路径。
+
 ## 网络代理设置
 
 ```json
