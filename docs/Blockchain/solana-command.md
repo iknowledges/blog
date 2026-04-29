@@ -32,6 +32,8 @@ cd test-hello-world
 anchor build
 anchor test --skip-local-validator
 anchor deploy --provoder.cluster localnet
+# 更新program id
+anchor keys sync
 ```
 
 ## 问题解决
