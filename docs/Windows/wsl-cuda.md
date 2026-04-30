@@ -1,31 +1,80 @@
 # WSL安装CUDA
 
-1. 参照[官网](https://developer.nvidia.com/cuda-11-8-0-download-archive?target_os=Linux&target_arch=x86_64&Distribution=WSL-Ubuntu&target_version=2.0&target_type=deb_local)，输入如下命令进行安装：
+## 安装NVIDIA驱动
+
+1. 打开[NVIDIA官网](https://www.nvidia.com/en-us/drivers/)，选择如下选项，然后下载Game Ready驱动：
+
+- Select Product Category: GeForce
+- Select Product Series: GeForce RTX 30 Series
+- Select Product: GeForce RTX 3060
+- Select Operating System: Windows 11
+- Select Language: English (US)
+
+2. 打开命令行，执行如下命令：
 
 ```
-wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
-sudo mv cuda-wsl-ubuntu.pin /etc/apt/preferences.d/cuda-repository-pin-600
-wget https://developer.download.nvidia.com/compute/cuda/11.8.0/local_installers/cuda-repo-wsl-ubuntu-11-8-local_11.8.0-1_amd64.deb
-sudo dpkg -i cuda-repo-wsl-ubuntu-11-8-local_11.8.0-1_amd64.deb
-sudo cp /var/cuda-repo-wsl-ubuntu-11-8-local/cuda-*-keyring.gpg /usr/share/keyrings/
-sudo apt-get update
-sudo apt-get -y install cuda
+nvidia-smi
 ```
 
-2. 设置环境变量，编辑`~/.bashrc`：
+显示如下内容：
 
 ```
-export CUDA_HOME=/usr/local/cuda-11.8
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 596.36                 Driver Version: 596.36         CUDA Version: 13.2     |
++-----------------------------------------+------------------------+----------------------+
+```
+
+## 安装CUDA
+
+1. 上一步显示的【CUDA Version】就是显卡驱动支持的CUDA版本，这里要注意【NVIDIA-SMI】和【Driver Version】的版本是否一致，因为有时自动更新后可能更新了【Driver Version】，但是【NVIDIA-SMI】还是老版本，这时要以低版本为准，然后查阅[Table 3 CUDA Toolkit and Corresponding Driver Versions](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)找到对应的CUDA版本。
+
+2. 打开[CUDA Toolkit Archive](https://developer.nvidia.com/cuda-toolkit-archive)，选择【CUDA Toolkit 13.2.1】，然后依次选择【Linux】->【x86_64】->【WSL-Ubuntu】->【2.0】->【runfile (local)】：
+
+```
+wget https://developer.download.nvidia.com/compute/cuda/13.2.1/local_installers/cuda_13.2.1_595.58.03_linux.run
+sudo sh cuda_13.2.1_595.58.03_linux.run
+```
+
+默认安装选项如下：
+- [X] CUDA Toolkit 13.2
+- [X] CUDA Documentation 13.2
+
+注意：这里推荐选择runfile进行安装，因为runfile会生成卸载命令cuda-uninstaller，而使用apt安装不会生成。
+
+5. 设置环境变量，编辑`~/.bashrc`：
+
+```
+export CUDA_HOME=/usr/local/cuda-13.2
 export PATH=$CUDA_HOME/bin:$PATH
 export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
 ```
 
-3. 查看CUDA版本
+6. 查看CUDA版本
 
 ```
 source ~/.bashrc
 nvcc -V
 ```
+
+## 卸载
+
+1. 参照文档[CUDA Installation Guide for Linux](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#runfile-uninstallation)
+
+- runfile安装cuda后的卸载命令是：
+
+```
+sudo /usr/local/cuda-13.2/bin/cuda-uninstaller
+```
+
+- apt安装cuda后的卸载命令是：
+
+```
+# 这里的package_name各个版本安装的名称不一样
+sudo apt --purge remove <package_name>
+sudo apt autoremove
+```
+
+2. 删除`~/.bashrc`中的相关配置，并确认`/usr/local/`目录下cuda相关文件已删除。
 
 #### 参考资源
 
