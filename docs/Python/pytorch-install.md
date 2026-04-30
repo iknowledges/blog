@@ -18,22 +18,25 @@ nvcc --version
 
 #### WSL中安装
 
-1. 第1、2步同上，第3步中选择下载`WSL-Ubuntu`版本的`CUDA Toolkit`，然后启动WSL并执行下面安装命令：
+1. 第1、2步同上，第3步中选择下载`WSL-Ubuntu`版本的`CUDA Toolkit`，这里推荐使用runfile进行安装，因为runfile会生成卸载命令cuda-uninstaller：
 
 ```
-wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-wsl-ubuntu.pin
-sudo mv cuda-wsl-ubuntu.pin /etc/apt/preferences.d/cuda-repository-pin-600
-wget https://developer.download.nvidia.com/compute/cuda/12.6.2/local_installers/cuda-repo-wsl-ubuntu-12-6-local_12.6.2-1_amd64.deb
-sudo dpkg -i cuda-repo-wsl-ubuntu-12-6-local_12.6.2-1_amd64.deb
-sudo cp /var/cuda-repo-wsl-ubuntu-12-6-local/cuda-*-keyring.gpg /usr/share/keyrings/
-sudo apt-get update
-sudo apt-get -y install cuda-toolkit-12-6
+wget https://developer.download.nvidia.com/compute/cuda/12.6.2/local_installers/cuda_12.6.2_560.35.03_linux.run
+sudo sh cuda_12.6.2_560.35.03_linux.run
 ```
 
-2. 测试是否安装成功：
+2. 设置环境变量，编辑`~/.bashrc`：
 
 ```
-nvidia-smi
+export CUDA_HOME=/usr/local/cuda-12.6
+export PATH=$CUDA_HOME/bin:$PATH
+export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
+```
+
+3. 测试是否安装成功：
+
+```
+nvcc -V
 ```
 
 ## 安装Pytorch
