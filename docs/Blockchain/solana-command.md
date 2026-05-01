@@ -36,6 +36,25 @@ anchor deploy --provoder.cluster localnet
 anchor keys sync
 ```
 
+- 部署步骤
+
+1. 参照文档[Deploy to Devnet](https://www.anchor-lang.com/docs/quickstart/local)，修改Anchor.toml
+
+```
+[provider]
+cluster = "Devnet"
+wallet = "~/.config/solana/id.json"
+```
+
+2. 执行下面命令
+
+```
+solana config set --url devnet
+anchor deploy -- --use-rpc
+```
+
+3. 打开https://explorer.solana.com/搜索`Program Id`
+
 ## 问题解决
 
 1. Problem:
