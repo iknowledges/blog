@@ -1,3 +1,4 @@
+* [Node Version Manager (nvm) 安装教程](nvm-install.md)
 * [Ubuntu安装nodejs](ubuntu-install-nodejs.md)
 * [nodejs常用命令](nodejs-command.md)
 * [React Native开发环境搭建](react-native-install.md)
