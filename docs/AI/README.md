@@ -6,3 +6,4 @@
 * [使用LLMs进行生成](generation-with-llms.md)
 * [微调预训练模型](fine-tune-model.md)
 * [Build an MCP server](mcp-server.md)
+* [Codex App教程](codex-app.md)
