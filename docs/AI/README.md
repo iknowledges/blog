@@ -7,3 +7,4 @@
 * [微调预训练模型](fine-tune-model.md)
 * [Build an MCP server](mcp-server.md)
 * [Codex App教程](codex-app.md)
+* [Ollama安装教程](ollama-install.md)
