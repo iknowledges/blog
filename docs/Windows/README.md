@@ -19,4 +19,5 @@
 * [WSL安装ArchLinux](wsl-archlinux.md)
 * [Windows Subsystem For Android安装教程](wsa-install.md)
 * [WSL2配置端口转发](wsl-port.md)
+* [WSL2使用Clash Verge代理](wsl-clash.md)
 * [Windows使用Samba服务共享文件](win-samba.md)
