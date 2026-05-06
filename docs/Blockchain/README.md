@@ -4,4 +4,5 @@
 * [Solana Program开发教程](solana-program-develop.md)
 * [Solana开发环境安装](solana-install.md)
 * [Solana常用命令](solana-command.md)
+* [Solana CLI关联Phantom钱包](solana-phantom.md)
 * [Foundry开发教程](foundry-tutorial.md)
