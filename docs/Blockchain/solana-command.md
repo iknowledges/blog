@@ -24,6 +24,12 @@ solana airdrop 2
 solana balance
 ```
 
+## SPL Token命令
+
+```
+spl-token accounts
+```
+
 ## Anchor命令
 
 ```
