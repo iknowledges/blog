@@ -5,4 +5,5 @@
 * [Solana开发环境安装](solana-install.md)
 * [Solana常用命令](solana-command.md)
 * [Solana CLI关联Phantom钱包](solana-phantom.md)
+* [Solana使用Helius RPC节点](solana-helius.md)
 * [Foundry开发教程](foundry-tutorial.md)
