@@ -10,3 +10,4 @@
 * [Clang-Format教程](clang-format.md)
 * [VScode编写Snippets教程](vscode-snippets.md)
 * [Clion配置Qt开发环境](clion-qt.md)
+* [Antigravity使用Proxifier教程](antigravity-proxifier.md)
