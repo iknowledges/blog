@@ -32,6 +32,12 @@ python.exe -m pip --version
 pip install vertualenv
 ```
 
+PowerShell中激活虚拟环境还需要如下修改安全策略（以管理员身份运行）：
+
+```
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
 #### 参考资料
 
 - [Installing Packages](https://packaging.python.org/en/latest/tutorials/installing-packages/#ensure-pip-setuptools-and-wheel-are-up-to-date)
