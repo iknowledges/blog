@@ -41,5 +41,4 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 #### 参考资料
 
 - [Installing Packages](https://packaging.python.org/en/latest/tutorials/installing-packages/#ensure-pip-setuptools-and-wheel-are-up-to-date)
-- 
 - [Python Embeddable Package 完全指南](https://www.jermey.cn/2026/04/08/python-embeddable-package-guide.html)
