@@ -19,3 +19,4 @@
 * [安装Python-LZO](python-lzo-install.md)
 * [Anki开发教程](anki-addon-develop.md)
 * [Windows embeddable package安装教程](python-embeddable.md)
+* [nbstata安装](jupyter-nbstata.md)
