@@ -6,6 +6,7 @@
 * [Rust Workspace教程](rust-workspace.md)
 * [Callback Functions Using PyO3](pyo3-callback.md)
 * [Pub/Sub by PyO3](pyo3-pubsub.md)
+* [PyO3中Rust调用Python](rust-call-python.md)
 * [Maturin Tutorial](maturin-tutorial.md)
 * [State Machine by Rust](state-machine.md)
 * [Candle安装使用教程](candle-install.md)
