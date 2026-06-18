@@ -92,6 +92,13 @@ maturin develop -m <path-to-crate>/Cargo.toml
 maturin build
 ```
 
+5. publish the project
+
+```
+export MATURIN_PYPI_TOKEN=pypi-<your_api_token>
+maturin publish
+```
+
 ## Adding Python type information
 
 1. specify a different python source directory in `pyproject.toml`

@@ -67,8 +67,23 @@ print(add_one(10))
 
 ## Uploading your Project to PyPI
 
+1. 在[pypi](https://pypi.org/manage/account/)中创建API tokens，并安装twine：
+
 ```
 pip install build twine
+```
+
+2. 创建`$HOME/.pypirc`文件：
+
+```
+[pypi]
+  username = __token__
+  password = pypi-<your_api_token>
+```
+
+3. 执行上传命令：
+
+```
 # Packaging your project
 python -m build --sdist
 # Upload to PyPi
