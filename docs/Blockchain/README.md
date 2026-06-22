@@ -7,3 +7,4 @@
 * [Solana CLI关联Phantom钱包](solana-phantom.md)
 * [Solana使用Helius RPC节点](solana-helius.md)
 * [Foundry开发教程](foundry-tutorial.md)
+* [OpenZepplin开发教程](openzepplin-tutorial.md)
