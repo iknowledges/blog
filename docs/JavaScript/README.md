@@ -8,3 +8,5 @@
 * [Electron离线打包教程](electron-offline.md)
 * [React入门教程](react-tutorial.md)
 * [shadcn/ui安装教程](shadcn-install.md)
+* [Tailwind CSS 教程](tailwindcss-tutorial.md)
+* [Tailwind CSS 自定义](tailwindcss-custom.md)
