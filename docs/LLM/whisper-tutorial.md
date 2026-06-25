@@ -19,15 +19,20 @@ sudo apt install ffmpeg
 
 `load_model`会将模型下载到`~/.cache/whisper`目录下，如果下载过慢，可以先从[Whisper模型对应官方地址](https://zhuanlan.zhihu.com/p/1974225459907666863)下载好模型文件，然后拷贝到这个目录下。
 
+模型选择建议：
+- 无GPU时英语模型用`small.en`，多语言模型用`small`
+- 8GB以上GPU用`large`
+
 ```python
 from pathlib import Path
 import argparse
 import whisper
 
-def audio_to_speech(directory, lang, overwrite):
+def audio_to_speech(directory, lang, fmt, overwrite):
     """
     directory: path to audio
     lang: en zh
+    fmt: srt vtt
     """
     p = Path(directory)
     model = whisper.load_model("large")
@@ -36,11 +41,14 @@ def audio_to_speech(directory, lang, overwrite):
             audio_file = root / file
             if audio_file.suffix not in [".mp4", ".avi"]:
                 continue
-            save_file = audio_file.with_suffix('.srt')
+            save_file = audio_file.with_suffix(f'.{fmt}')
             if save_file.is_file() and not overwrite:
                 continue
             result = model.transcribe(audio_file.as_posix(), language=lang, verbose=True)
-            save_srt(save_file, result["segments"])
+            if 'vtt' == fmt:
+                save_vtt(save_file, result["segments"])
+            else:
+                save_srt(save_file, result["segments"])
 
 def format_seconds(seconds):
     """
@@ -72,13 +80,40 @@ def save_srt(save_file, segments):
             f.write(f'{seg["text"]}\n')
             f.write('\n')
 
+def save_vtt(save_file, segments):
+    with open(save_file, 'w', encoding='utf-8') as f:
+        f.write('WEBVTT\n\n')
+        for seg in segments:
+            start = format_seconds(float(seg["start"]))
+            end = format_seconds(float(seg["end"]))
+            f.write(f'{start} --> {end}\n')
+            f.write(f'{seg["text"]}\n')
+            f.write('\n')
+
 def main():
     parser = argparse.ArgumentParser(prog='Whisper')
     parser.add_argument('directory')
-    parser.add_argument('--lang', default='zh')
-    parser.add_argument('--overwrite', action='store_true')
+    parser.add_argument(
+        '--lang',
+        type=str,
+        choices=["en", "zh"],
+        default="en",
+        help="Specify the video language (default: en)"
+    )
+    parser.add_argument(
+        '--format',
+        type=str,
+        choices=["srt", "vtt"],
+        default="vtt",
+        help="Specify the subtitle format (default: vtt)"
+    )
+    parser.add_argument(
+        '--overwrite',
+        action='store_true',
+        help='Overwrite existing subtitle file'
+    )
     args = parser.parse_args()
-    audio_to_speech(args.directory, args.lang, args.overwrite)
+    audio_to_speech(args.directory, args.lang, args.format, args.overwrite)
 
 if __name__ == '__main__':
     main()
