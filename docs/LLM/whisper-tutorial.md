@@ -50,7 +50,7 @@ def audio_to_speech(directory, lang, fmt, overwrite):
             else:
                 save_srt(save_file, result["segments"])
 
-def format_seconds(seconds):
+def format_seconds(seconds, timestamp_separator='.'):
     """
     seconds to H:M:S:M
     """
@@ -67,14 +67,14 @@ def format_seconds(seconds):
         seconds = '0' + seconds
     if len(milliseconds) < 3:
         milliseconds = '0' * (3-len(milliseconds)) + milliseconds
-    return f"{hours}:{minutes}:{seconds},{milliseconds}"
+    return f"{hours}:{minutes}:{seconds}{timestamp_separator}{milliseconds}"
 
 def save_srt(save_file, segments):
     with open(save_file, 'w', encoding='utf-8') as f:
         for i in range(len(segments)):
             seg = segments[i]
-            start = format_seconds(float(seg["start"]))
-            end = format_seconds(float(seg["end"]))
+            start = format_seconds(float(seg["start"]), ',')
+            end = format_seconds(float(seg["end"]), ',')
             f.write(f'{i + 1}\n')
             f.write(f'{start} --> {end}\n')
             f.write(f'{seg["text"]}\n')
@@ -84,8 +84,8 @@ def save_vtt(save_file, segments):
     with open(save_file, 'w', encoding='utf-8') as f:
         f.write('WEBVTT\n\n')
         for seg in segments:
-            start = format_seconds(float(seg["start"]))
-            end = format_seconds(float(seg["end"]))
+            start = format_seconds(float(seg["start"]), '.')
+            end = format_seconds(float(seg["end"]), '.')
             f.write(f'{start} --> {end}\n')
             f.write(f'{seg["text"]}\n')
             f.write('\n')
