@@ -1,6 +1,11 @@
 # Antigravity使用Proxifier教程
 
-1. 下载[Proxifier](https://www.proxifier.com/download/)并安装，注册可以参考[Proxifier-Keygen](https://github.com/y9nhjy/Proxifier-Keygen)。
+1. 下载[Proxifier](https://www.proxifier.com/download/)并安装，注册可以参考[Proxifier-Keygen](https://github.com/y9nhjy/Proxifier-Keygen)，使用如下命令获取注册码，setup对应安装的Proxifier版本。
+
+```
+python Proxifier_Keygen.py -v setup
+```
+
 2. 打开【Profile】->【Proxy Servers】->【Add】，输入如下配置：
 
 - Address: 127.0.0.1
