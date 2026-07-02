@@ -1,6 +1,7 @@
 * [Node Version Manager (nvm) 安装教程](nvm-install.md)
 * [Ubuntu安装nodejs](ubuntu-install-nodejs.md)
 * [nodejs常用命令](nodejs-command.md)
+* [TypeScript使用教程](typescript-tutorial.md)
 * [React Native开发环境搭建](react-native-install.md)
 * [JS自定义右键菜单](context-menu.md)
 * [yarn教程](yarn-tutorial.md)
