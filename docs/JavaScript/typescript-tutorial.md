@@ -61,11 +61,11 @@ console.log("Hello world!");
 
 ```
 # 直接运行
-node run dev
+npm run dev
 # 先编译
-node run build
+npm run build
 # 再运行
-node run start
+npm run start
 ```
 
 #### 参考资料
