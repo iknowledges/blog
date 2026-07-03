@@ -10,3 +10,4 @@
 * [Maturin Tutorial](maturin-tutorial.md)
 * [State Machine by Rust](state-machine.md)
 * [Candle安装使用教程](candle-install.md)
+* [napi-rs使用教程](napi-tutorial.md)
