@@ -3,8 +3,6 @@
 1. Create virtual environment:
 
 ```
-mkdir my-project
-cd my-project
 uv venv
 source .venv/bin/activate
 uv pip install maturin
@@ -13,7 +11,8 @@ uv pip install maturin
 2. Initial project:
 
 ```
-maturin init
+maturin new my-project
+cd my-project
 ```
 
 - Cargo.toml
