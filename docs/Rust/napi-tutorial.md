@@ -52,14 +52,37 @@ npm install
 }
 ```
 
-3. 然后本地安装前面创建的Rust包，并安装加载`.node`文件需要的工具nextjs-node-loader：
+3. 然后本地安装前面创建的Rust包：
 
 ```
 npm install ../my-rust-lib
-npm install nextjs-node-loader --save
 ```
 
-4. 修改next.config.ts：
+4. 参考[nextjs-node-loader (No Longer Maintained)](https://www.npmjs.com/package/nextjs-node-loader)，修改next.config.ts配置，新的写法如下：
+
+```ts
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  /* config options here */
+  serverExternalPackages: ['my-rust-lib'],
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      config.externals = [
+        ...config.externals,
+        {'my-rust-lib': 'commonjs my-rust-lib'},
+      ]
+    }
+    return config;
+  },
+};
+```
+
+> 老的配置方法，需要先安装nextjs-node-loader：
+
+```
+npm install nextjs-node-loader --save-dev
+```
 
 ```ts
 import type { NextConfig } from "next";
