@@ -5,7 +5,7 @@
 1. 进入已创建的next.js项目目录，输入下面命令进行安装并初始化：
 
 ```
-pnpm install -D prisma @prisma/client
+pnpm install -D prisma @prisma/client @prisma/adapter-pg
 pnpm dlx prisma init
 ```
 
@@ -37,4 +37,20 @@ pnpm dlx prisma generate
 pnpm dlx prisma migrate dev --name init
 # 启动可视化工具
 pnpm dlx prisma studio
+```
+
+3. 在Server Component中查询数据：
+
+```ts
+import { PrismaClient } from "@/generated/prisma/client";
+import { PrismaPg } from "@prisma/adapter-pg";
+
+export async function getUsers() {
+  const adapter = new PrismaPg({
+    connectionString: process.env.DATABASE_URL,
+  });
+  const prisma = new PrismaClient({ adapter });
+  const users = await prisma.userEntity.findMany();
+  return users;
+}
 ```
