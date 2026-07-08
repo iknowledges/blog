@@ -11,7 +11,7 @@
 * [VSCode配置MinGW开发环境](mingw64-vscode.md)
 * [MSYS2中使用pkg-config](msys2-pkg-config.md)
 * [MSYS2安装Qt开发环境](msys2-qt.md)
-* [WSL安装CUDA](wsl-cuda.md)
+* [Windows安装CUDA](win-cuda.md)
 * [WSL配置防火墙规则](wsl-firewall.md)
 * [WSL中ldconfig报错](wsl-ldconfig.md)
 * [CMD控制台设置字符编码](cmd-encoding.md)

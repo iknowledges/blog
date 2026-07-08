@@ -1,6 +1,6 @@
-# WSL安装CUDA
+# Windows安装CUDA
 
-## 安装NVIDIA驱动
+## 一、安装NVIDIA驱动
 
 1. 打开[NVIDIA官网](https://www.nvidia.com/en-us/drivers/)，选择如下选项，然后下载Game Ready驱动：
 
@@ -24,7 +24,7 @@ nvidia-smi
 +-----------------------------------------+------------------------+----------------------+
 ```
 
-## 安装CUDA
+## 二、WSL中安装CUDA
 
 1. 上一步显示的【CUDA Version】就是显卡驱动支持的CUDA版本，这里要注意【NVIDIA-SMI】和【Driver Version】的版本是否一致，因为有时自动更新后可能更新了【Driver Version】，但是【NVIDIA-SMI】还是老版本，这时要以低版本为准，然后查阅[Table 3 CUDA Toolkit and Corresponding Driver Versions](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)找到对应的CUDA版本。
 
@@ -56,7 +56,7 @@ source ~/.bashrc
 nvcc -V
 ```
 
-## 卸载
+> 卸载CUDA
 
 1. 参照文档[CUDA Installation Guide for Linux](https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#runfile-uninstallation)
 
@@ -75,6 +75,16 @@ sudo apt autoremove
 ```
 
 2. 删除`~/.bashrc`中的相关配置，并确认`/usr/local/`目录下cuda相关文件已删除。
+
+## 三、本机中安装CUDA
+
+1. 前面选择版本的步骤和WSL中一样，然后打开[CUDA Toolkit Archive](https://developer.nvidia.com/cuda-toolkit-archive)，选择【CUDA Toolkit 13.2.1】，然后依次选择【Windows】->【x86_64】->【11】->【exe (local)】，下载后双击运行安装。
+
+2. 启动PowerShell查看CUDA版本：
+
+```
+nvcc -V
+```
 
 #### 参考资源
 
