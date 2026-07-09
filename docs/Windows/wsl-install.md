@@ -34,7 +34,7 @@ wsl --set-default-version 2
 # 查看有效分发版的列表
 wsl --list --online
 # 安装指定分发版
-wsl --install Ubuntu-24.04
+wsl --install Ubuntu-26.04
 # 查看已安装的wsl状态
 wsl -l -v
 # 停止正在运行的wsl
@@ -44,7 +44,7 @@ wsl --export Ubuntu D:\ubuntu-backup.tar
 # 卸载旧的wsl
 wsl --unregister Ubuntu
 # 导入tar包到指定位置
-wsl --import Ubuntu D:\WSL\Ubuntu22 D:\ubuntu-backup.tar --version 2
+wsl --import Ubuntu D:\WSL\Ubuntu26 D:\ubuntu-backup.tar --version 2
 # 恢复之前的用户
 Ubuntu config --default-user <用户名>
 ```
