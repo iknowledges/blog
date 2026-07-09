@@ -1,6 +1,14 @@
 ﻿# 本地上传代码到github仓库
 
-#### 一、ssh远程设置
+#### 一、Windows安装 Portable Git
+
+首先在官网下载[Git for Windows/x64 Portable](https://git-scm.com/install/windows)，双击解压到指定文件夹。然后将`D:\path\to\PortableGit\cmd`加入系统环境变量。最后输入下面命令查看安装的Git版本：
+
+```
+git --version
+```
+
+#### 二、ssh远程设置
 
 1. 进入本地代码目录，打开git bash，输入：
 ```bash
@@ -25,7 +33,7 @@ ssh -T git@github.com
 ```
 ![3](https://gitlab.com/iknowledge/BlogImage/-/raw/main/GitHub/github03.png)
 
-#### 二、初次建立本地仓库并提交代码
+#### 三、初次建立本地仓库并提交代码
 
 1. 首先建立本地仓库
 ```bash
@@ -55,7 +63,7 @@ git remote add origin git@github.com:<仓库地址>
 git push -u origin master
 ```
 
-#### 三、同一主机更新代码
+#### 四、同一主机更新代码
 
 1. 同步github仓库
 ```bash
@@ -77,7 +85,7 @@ git commit  -m  "提交信息"
 git push -u origin master 
 ```
 
-#### 四、另一主机更新代码
+#### 五、另一主机更新代码
 
 1. 拉取仓库代码到本地
 ```bash

@@ -12,38 +12,83 @@ git clone https://github.com/microsoft/vcpkg.git
 
 ```
 cd vcpkg
-bootstrap-vcpkg.bat
+.\bootstrap-vcpkg.bat -disableMetrics
 ```
 
-3. 设置环境变量
+- disableMetrics: 表示禁用数据采集
+
+3. 在CMD中设置环境变量，或者设置成系统环境变量，那么就不用输入下面命令：
 
 ```
 set VCPKG_ROOT="C:\path\to\vcpkg"
 set PATH=%VCPKG_ROOT%;%PATH%
 ```
 
-## 设置Visual Studio项目
+4. 测试是否安装成功：
 
-1. 使用VS创建CMake项目，命名为helloworld。
+```
+# 查看版本
+vcpkg version
+# 查看所有指令
+vcpkg help topics
+```
 
-2. 在该项目目录下打开Developer Command Prompt：
+## 开发中使用vcpkg
+
+### 创建测试项目
+
+1. 项目结构如下：
+
+```
+helloworld/
+├── CMakeLists.txt
+└── helloworld.cpp
+```
+
+2. 编写CMakeLists.txt文件：
+
+```
+cmake_minimum_required(VERSION 3.10)
+
+project(HelloWorld)
+
+find_package(fmt CONFIG REQUIRED)
+
+add_executable(HelloWorld helloworld.cpp)
+
+target_link_libraries(HelloWorld PRIVATE fmt::fmt)
+```
+
+3. 编写helloworld.cpp文件
+
+```cpp
+#include <fmt/core.h>
+
+int main()
+{
+    fmt::print("fmt version is {}\n", FMT_VERSION);
+    return 0;
+}
+```
+
+### 使用命令行编译
+
+1. 安装最新版本的依赖
+
+```
+vcpkg install fmt
+```
+
+2. 安装指定版本的依赖（可选）
 
 ```
 # 生成vcpkg.json和vcpkg-configuration.json
 vcpkg new --application
-# 添加fmt包作为依赖项
+# 将fmt包作为依赖项添加到vcpkg.json，不会进行安装，cmake配置阶段会自动调用vcpkg install安装
 vcpkg add port fmt
-# 安装依赖项，项目下生成vcpkg_installed目录
-vcpkg install
-# 安装依赖项时指定triplet
-vcpkg install --triplet x64-mingw-dynamic
-# 查看vcpkg支持的triplet
-vcpkg help triplet
 ```
 
-3. 如需指定包的版本，可以如下修改vcpkg.json：
-
-- 添加最低版本约束
+- 修改vcpkg.json添加最低版本约束
 
 ```
 {
@@ -56,7 +101,7 @@ vcpkg help triplet
 }
 ```
 
-- 强制采用特定版本
+- 修改vcpkg.json强制采用特定版本
 
 ```
 {
@@ -72,9 +117,17 @@ vcpkg help triplet
 }
 ```
 
-## 设置CMake项目
+3. 开始编译
 
-1. 将CMakePresets.json文件重命名为CMakeUserPresets.json，并将如下<VCPKG_ROOT>替换为至vcpkg目录的路径：
+```
+mkdir build
+cmake -B build -DCMAKE_TOOLCHAIN_FILE=path/to/vcpkg/scripts/buildsystems/vcpkg.cmake
+cmake --build build
+```
+
+### 使用VSCode编译
+
+- 方法一：在项目的根目录添加`CMakePresets.json`文件：
 
 ```
 {
@@ -83,36 +136,20 @@ vcpkg help triplet
         {
             "name": "default",
             "cacheVariables": {
-                "CMAKE_TOOLCHAIN_FILE": "<VCPKG_ROOT>/scripts/buildsystems/vcpkg.cmake"
+                "CMAKE_TOOLCHAIN_FILE": "path/to/vcpkg/scripts/buildsystems/vcpkg.cmake"
             }
         }
     ]
 }
 ```
 
-2. 编辑CMakeLists.txt文件：
+- 方法二：修改项目根目录下的`.vscode/settings.json`文件：
 
-```
-cmake_minimum_required(VERSION 3.10)
-
-project(HelloWorld)
-
-find_package(fmt CONFIG REQUIRED)
-
-add_executable(HelloWorld helloworld.cpp)
-
-target_link_libraries(HelloWorld PRIVATE fmt::fmt)
-```
-
-3. 修改helloworld.cpp文件
-
-```cpp
-#include <fmt/core.h>
-
-int main()
+```json
 {
-    fmt::print("fmt version is {}\n", FMT_VERSION);
-    return 0;
+    "cmake.configureSettings": {
+        "CMAKE_TOOLCHAIN_FILE": "path/to/vcpkg/scripts/buildsystems/vcpkg.cmake"
+    }
 }
 ```
 
@@ -153,9 +190,15 @@ vcpkg x-update-baseline --add-initial-baseline
 vcpkg x-update-baseline
 ```
 
-### install和remove
+### 其他
 
 ```
+# 安装依赖项时指定triplet
+vcpkg install --triplet x64-mingw-dynamic
+# 查看vcpkg支持的triplet
+vcpkg help triplet
+# 列出已安装的包
+vcpkg list
 # 安装boost
 vcpkg install boost
 # 协助boost
@@ -164,6 +207,6 @@ vcpkg remove --recurse boost-uninstall
 
 #### 参考资料
 
-- [教程：在 Visual Studio 中使用 CMake 安装和使用包](https://learn.microsoft.com/zh-cn/vcpkg/get_started/get-started-vs?pivots=shell-cmd)
-- [教程：安装特定版本的包](https://learn.microsoft.com/zh-cn/vcpkg/consume/lock-package-versions?tabs=inspect-bash)
+- [Tutorial: Install and use packages with CMake in Visual Studio](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started-vs?pivots=shell-powershell)
+- [Tutorial: Install a specific version of a package](https://learn.microsoft.com/en-us/vcpkg/consume/lock-package-versions?tabs=inspect-powershell)
 - [git log format](https://www.cnblogs.com/ckAng/p/11205055.html)
