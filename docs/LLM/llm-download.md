@@ -12,13 +12,15 @@ pip install huggingface_hub
 修改默认下载路径：
 
 ```
+# 设置下载路径
 export HF_HOME=/path/to/huggingface
+# 镜像加速
+export HF_ENDPOINT=https://hf-mirror.com
 ```
 
 下载时指定目录：
 
 ```
-export HF_ENDPOINT=https://hf-mirror.com
 hf download deepseek-ai/DeepSeek-OCR --local_dir /path/to/huggingface
 ```
 

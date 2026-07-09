@@ -5,3 +5,4 @@
 * [PaddleOCR-VL部署教程](paddleocr-vl.md)
 * [CosyVoice部署教程](cosy-voice.md)
 * [Whisper使用教程](whisper-tutorial.md)
+* [llama.cpp教程](llama-tutorial.md)
