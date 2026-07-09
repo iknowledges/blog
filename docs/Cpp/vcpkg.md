@@ -207,6 +207,6 @@ vcpkg remove --recurse boost-uninstall
 
 #### 参考资料
 
-- [Tutorial: Install and use packages with CMake in Visual Studio](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started-vs?pivots=shell-powershell)
+- [Tutorial: Install and use packages with CMake](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started?pivots=shell-powershell)
 - [Tutorial: Install a specific version of a package](https://learn.microsoft.com/en-us/vcpkg/consume/lock-package-versions?tabs=inspect-powershell)
 - [git log format](https://www.cnblogs.com/ckAng/p/11205055.html)
