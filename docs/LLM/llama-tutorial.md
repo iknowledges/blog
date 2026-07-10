@@ -22,6 +22,8 @@ cd llama.cpp
 mkdir build
 cmake -B build -DCMAKE_BUILD_TYPE=Release -DGGML_CUDA=ON -DGGML_NATIVE=ON -DCMAKE_CUDA_ARCHITECTURES="86"
 cmake --build build --config Release -j $env:NUMBER_OF_PROCESSORS
+# Override directory at install time (CMake 3.15+)
+cmake --install build --prefix D:/Software/llama.cpp
 ```
 
 - GGML_NATIVE: ON是针对当前系统中的硬件进行编译，OFF是编译适用于所有CUDA GPU的版本。
