@@ -48,11 +48,12 @@ llama-server.exe --model "E:\path\to\Qwen3.6-27B-UD-IQ2_M.gguf" --mmproj "E:\pat
 llama-server.exe --model "E:\path\to\Qwen3.6-27B-UD-IQ2_M.gguf" -c 16384
 ```
 
-`--mmproj`: 指定支持图片、视频、音频文件的投影文件
-`-c`: 上下文长度
-`--image-max-tokens`: 限制输入图像的长和宽
+- `--mmproj`: 指定支持图片、视频、音频文件的投影文件
+- `-c`: 上下文长度
+- `--image-max-tokens`: 限制输入图像的长和宽
+- 如果要远程访问再加上参数`--host 0.0.0.0`
 
-3. 使用openai库访问服务，如果远程访问要加上参数`llama-server.exe --host 0.0.0.0`
+3. 使用openai库访问服务：
 
 ```python
 import openai
@@ -69,6 +70,29 @@ completion = client.completions.create(
 )
 
 print(completion.choices[0].text)
+```
+
+4. 使用langchain访问服务：
+
+```python
+from langchain_openai import ChatOpenAI
+
+llm = ChatOpenAI(
+    base_url="http://127.0.0.1:8080/v1",
+    api_key="not-needed",
+    model="local-model",
+    temperature=0.7
+)
+
+messages = [
+    (
+        "system",
+        "You are a helpful assistant that translates English to French. Translate the user sentence.",
+    ),
+    ("human", "I love programming."),
+]
+ai_msg = llm.invoke(messages)
+print(ai_msg.text)
 ```
 
 #### 参考资料
