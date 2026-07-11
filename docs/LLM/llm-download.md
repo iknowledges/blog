@@ -21,7 +21,7 @@ export HF_ENDPOINT=https://hf-mirror.com
 下载时指定目录：
 
 ```
-hf download deepseek-ai/DeepSeek-OCR --local_dir /path/to/huggingface
+hf download Qwen/Qwen3.6-35B-A3B --local_dir /path/to/huggingface
 ```
 
 #### 其他命令
@@ -53,9 +53,19 @@ export MODELSCOPE_CACHE=/path/to/modelscope
 下载时指定目录：
 
 ```
-modelscope download --model deepseek-ai/DeepSeek-OCR --local_dir /path/to/modelscope
+modelscope download --model Qwen/Qwen3.6-35B-A3B --local_dir /path/to/modelscope
+```
+
+#### 其他命令
+
+```
+# 查看下载的模型缓存
+modelscope scan-cache
+# 删除模型缓存
+modelscope clear-cache --model Qwen/Qwen3.6-35B-A3B
 ```
 
 #### 参考资料
 
 - [Command Line Interface (CLI)](https://huggingface.co/docs/huggingface_hub/main/en/guides/cli#hf-cache)
+- [ModelScope CLI 工具](https://www.modelscope.cn/docs/sdk/cli)
