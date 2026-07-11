@@ -7,3 +7,4 @@
 * [Whisper使用教程](whisper-tutorial.md)
 * [llama.cpp教程](llama-tutorial.md)
 * [vLLM教程](vllm-tutorial.md)
+* [FastFlowLM教程](fastflowml-tutorial.md)
