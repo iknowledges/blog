@@ -21,7 +21,10 @@ export HF_ENDPOINT=https://hf-mirror.com
 下载时指定目录：
 
 ```
-hf download Qwen/Qwen3.6-35B-A3B --local_dir /path/to/huggingface
+# 直接下载全部模型文件到指定目录
+hf download Qwen/Qwen3.6-35B-A3B --local-dir /path/to/huggingface
+# 会保持huggingface缓存的目录结构
+hf download Qwen/Qwen3.6-35B-A3B --cache-dir /path/to/huggingface
 ```
 
 #### 其他命令
