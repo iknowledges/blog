@@ -53,7 +53,16 @@ llama-server.exe --model "E:\path\to\Qwen3.6-27B-UD-IQ2_M.gguf" -c 16384
 - `--image-max-tokens`: 限制输入图像的长和宽
 - 如果要远程访问再加上参数`--host 0.0.0.0`
 
-3. 使用openai库访问服务：
+#### 其他指令
+
+```
+# 启用embeddings
+llama-server -m path/to/your_model.gguf --embeddings --pooling mean
+```
+
+## 客户端访问模型
+
+1. 使用openai库访问服务：
 
 ```python
 import openai
@@ -72,7 +81,7 @@ completion = client.completions.create(
 print(completion.choices[0].text)
 ```
 
-4. 使用langchain访问服务：
+2. 使用langchain访问服务：
 
 ```python
 from langchain_openai import ChatOpenAI
