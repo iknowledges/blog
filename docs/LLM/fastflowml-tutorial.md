@@ -53,8 +53,14 @@ print(ai_msg.text)
 flm list
 # 查看已下载的模型
 flm list --filter installed
+# 下载模型
+flm pull qwen3.5:9b
 # 删除模型
 flm remove qwen3.5:9b
+# 启动服务并开启whisper，对应 POST /v1/audio/transcriptions
+flm serve qwen3.5:9b --asr 1
+# 启动服务并开启embedding，对应 POST /v1/embeddings
+flm serve qwen3.5:9b --embed 1
 ```
 
 #### 参考资料
