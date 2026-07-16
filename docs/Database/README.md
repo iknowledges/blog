@@ -9,3 +9,4 @@
 * [PostgreSQL安装教程](postgresql-install.md)
 * [Install TimescaleDB](timescaldb-install.md)
 * [MongoDB安装教程](mongodb-install.md)
+* [Qdrant安装教程](qdrant-install.md)
