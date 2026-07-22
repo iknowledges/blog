@@ -124,3 +124,14 @@ int main() {
     return 0;
 }
 ```
+
+- 设置透明背景，需要安装`Windows opacity`插件
+
+```json
+{
+    "workbench.colorCustomizations": {
+        "editor.background": "#ffffff00",
+    },
+    "winopacity.opacity": 200,
+}
+```
