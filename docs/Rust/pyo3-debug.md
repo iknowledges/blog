@@ -1,6 +1,12 @@
 # PyO3调试教程
 
-1. 新建一个pyo3demo项目，并添加pyo3依赖：
+1. 首先安装必需的VSCode插件：
+
+- [Rust Analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+- [CodeLLDB](https://marketplace.visualstudio.com/items?itemName=vadimcn.vscode-lldb)
+- [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+
+2. 新建一个pyo3demo项目，并添加pyo3依赖：
 
 ```
 cargo new pyo3demo --lib
@@ -8,7 +14,18 @@ cd pyo3demo
 cargo add pyo3
 ```
 
-2. 修改Cargo.toml配置如下，注意lib部分是指定生成动态库：
+目录结构如下：
+
+```
+pyo3demo/
+├── Cargo.toml
+├── src
+│   └── lib.rs
+└── tests
+    └── my_test.py
+```
+
+3. 修改Cargo.toml配置如下，注意lib部分是指定生成动态库：
 
 ```
 [package]
@@ -21,10 +38,10 @@ name = "pyo3lib"
 crate-type = ["cdylib"]
 
 [dependencies]
-pyo3 = "0.26.0"
+pyo3 = "0.29.0"
 ```
 
-3. 编写lib.rs如下：
+4. 编写`src/lib.rs`如下：
 
 ```rust
 use pyo3::prelude::*;
@@ -58,18 +75,26 @@ mod pyo3lib {
 }
 ```
 
-4. 编写test.py如下：
+5. 创建好虚拟环境，并安装pytest：
 
-```python
-from pyo3lib import MyClass
-
-my = MyClass(10)
-print(my.num)
-my.num = 20
-print(my.num)
+```
+pip install pytest
 ```
 
-5. 配置.vscode/launch.json
+6. 编写测试代码`tests/my_test.py`如下：
+
+```python
+import pytest
+from pyo3lib import MyClass
+
+def test_function():
+    my = MyClass(10)
+    assert my.num == 10
+    my.num = 20
+    assert my.num == 20
+```
+
+7. 创建`.vscode/launch.json`配置如下：
 
 ```json
 {
@@ -79,9 +104,9 @@ print(my.num)
             "name": "Debug PyO3 with Environment",
             "type": "lldb",
             "request": "launch",
-            "program": "path/to/python.exe",
+            "program": "${workspaceFolder}/.venv/bin/python",
+            "args": ["-m", "pytest", "tests/my_test.py::test_function", "-v"],
             "cwd": "${workspaceFolder}",
-            "args": ["test.py"],
             "env": {
                 "RUST_BACKTRACE": "1",
                 "PYTHONPATH": "${workspaceFolder}/target/debug"
@@ -92,7 +117,7 @@ print(my.num)
 }
 ```
 
-6. 编译项目，并将生成的pyo3demo.dll文件修改为pyo3demo.pyd。
+6. 编译项目，并修改生成的文件名，不改就会找不到相应模块。Linux环境将libpyo3lib.so修改为pyo3lib.so，Windows环境将pyo3demo.dll修改为pyo3demo.pyd。
 
 ```
 cargo build
@@ -102,4 +127,4 @@ cargo build
 
 #### 参考资料
 
-- [PyO3 user guide](https://pyo3.rs/v0.26.0/debugging.html)
+- [PyO3 user guide](https://pyo3.rs/v0.29.0/debugging.html)
