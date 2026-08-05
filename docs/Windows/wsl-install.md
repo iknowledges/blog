@@ -58,6 +58,32 @@ Ubuntu config --default-user <用户名>
 default=<username>
 ```
 
+## 配置
+
+1. 在`C:\Users\<用户名>`目录下新建`.wslconfig`文件：
+
+```
+[wsl2]
+memory=16GB
+processors=4
+swap=4GB
+localhostForwarding=true
+```
+
+- memory限制WSL使用的内存
+- processors限制WSL使用的CPU核心数量
+- swap表示WSL使用的交换区大小
+- localhostForwarding表示可以通过localhost访问WSL中的服务
+
+2. 重启WSL，然后使用如下命令查看配置是否生效：
+
+```
+# 检测核心数
+nproc
+# 检测内存大小
+free -h
+```
+
 ## 常用命令
 
 - 查看WSL在Windows中的位置，使用PowerShell执行下面命令：
