@@ -8,3 +8,4 @@
 * [llama.cpp教程](llama-tutorial.md)
 * [vLLM教程](vllm-tutorial.md)
 * [FastFlowLM教程](fastflowml-tutorial.md)
+* [Qwen3-TTS使用教程](qwen-tts-tutorial.md)
