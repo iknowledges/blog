@@ -89,6 +89,34 @@ TypeError: GZipResponder.__init__() missing 1 required keyword-only argument: 't
 pip install "starlette>=1.4.1"
 ```
 
+## Faster Qwen3-TTS
+
+1. 安装[faster-qwen3-tts](https://github.com/andimarafioti/faster-qwen3-tts)，此项目依赖qwen-tts：
+
+```
+pip install faster-qwen3-tts
+```
+
+2. 测试代码：
+
+```python
+import soundfile as sf
+from faster_qwen3_tts import FasterQwen3TTS
+
+model = FasterQwen3TTS.from_pretrained("Qwen/Qwen3-TTS-12Hz-1.7B-Base")
+
+ref_audio = "clone.wav"
+ref_text  = "Okay. Yeah. I resent you. I love you. I respect you. But you know what? You blew it! And thanks to you."
+
+wavs, sr = model.generate_voice_clone(
+    text="I am solving the equation: x = [-b ± √(b²-4ac)] / 2a? Nobody can — it's a disaster (◍•͈⌔•͈◍), very sad!",
+    language="English",
+    ref_audio=ref_audio,
+    ref_text=ref_text,
+)
+sf.write("output_voice_clone.wav", wavs[0], sr)
+```
+
 #### 参考资料
 
 - [Qwen/Qwen3-TTS-12Hz-1.7B-Base](https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base)
