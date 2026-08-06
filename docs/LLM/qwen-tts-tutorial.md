@@ -28,6 +28,14 @@ pip install flash_attn-2.8.3+cu13torch2.10cxx11abiTRUE-cp312-cp312-linux_x86_64.
 pip install qwen-tts
 ```
 
+也可以选择从源码安装：
+
+```
+git clone https://github.com/QwenLM/Qwen3-TTS.git
+cd Qwen3-TTS
+pip install -e .
+```
+
 5. 安装音频处理工具sox：
 
 ```
