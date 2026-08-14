@@ -38,7 +38,14 @@ nvm -v
 4. 安装Node：
 
 ```
+# 安装最新版node
 nvm install node
+# 使用最新版node
+nvm use node
+# 安装LTS版node
+nvm install --lts
+# 使用LTS版node
+nvm use --lts
 ```
 
 5. 验证安装是否成功，检查Node版本：
