@@ -2,7 +2,7 @@
 * [离线安装python环境](offline-installation.md)
 * [Pandas教程](pandas-tutorial.md)
 * [Ubuntu排查PyQt运行错误](ubuntu-pyqt.md)
-* [PyPI配置镜像源](pypi-config.md)
+* [pip配置](pip-config.md)
 * [Python中星号(*)和双星号(**)的用法](python-star.md)
 * [Pyinstaller使用教程](pyinstaller-tutorial.md)
 * [Python使用Grpc中的stream](python-grpc-stream.md)
