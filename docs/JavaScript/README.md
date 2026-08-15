@@ -12,3 +12,4 @@
 * [Tailwind CSS 教程](tailwindcss-tutorial.md)
 * [Tailwind CSS 自定义](tailwindcss-custom.md)
 * [Prisma使用教程](prisma-tutorial.md)
+* [TanStack Router教程](tanstack-router-tutorial.md)
