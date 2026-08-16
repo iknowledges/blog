@@ -1,5 +1,43 @@
 # Tailwind CSS 教程
 
+## 安装
+
+[Get started with Tailwind CSS](https://tailwindcss.com/docs/installation/using-vite)
+
+1. 创建react项目：
+
+```
+pnpm create vite my-project --template react-ts
+```
+
+2. 安装Tailwind CSS：
+
+```
+pnpm add tailwindcss @tailwindcss/vite
+```
+
+3. 修改`vite.config.ts`配置插件：
+
+```ts
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [
+    tailwindcss(),
+    react()
+  ],
+})
+```
+
+4. 修改`src/index.css`：
+
+```css
+@import "tailwindcss";
+```
+
 ## 1. Colors
 
 Default colors: white, black, red, green, blue, orange, yellow, purple, lime, emerald, teal, cyan, indigo, violet, fuchsia, pink, rose, sky, gray, slate, zinc, neutral, stone, amber
