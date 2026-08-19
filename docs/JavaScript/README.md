@@ -14,3 +14,4 @@
 * [Prisma使用教程](prisma-tutorial.md)
 * [TanStack Router教程](tanstack-router-tutorial.md)
 * [React Router教程](react-router-tutorial.md)
+* [Vite中配置CORS](vite-cors.md)
