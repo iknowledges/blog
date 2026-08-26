@@ -54,11 +54,16 @@ settings.json可以进行全局设置，也可以在.vscode目录下进行临时
 {
     "rust-analyzer.linkedProjects": [
         "./child_directory/Cargo.toml"
-    ]
+    ],
+    "rust-analyzer.server.extraEnv": {
+        "DATABASE_URL": "postgresql://postgres:password@127.0.0.1:5432/dbname"
+    }
 }
 ```
 
-- linkedProjects: 指定rust项目加载的Cargo.toml配置文件路径。
+- "rust-analyzer.linkedProjects": 指定rust项目加载的Cargo.toml配置文件路径。
+- "rust-analyzer.server.extraEnv": 给rust-analyzer的language server配置环境变量。
+
 
 ## 网络代理设置
 
