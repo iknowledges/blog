@@ -65,22 +65,14 @@ export default App
 1. 创建`src/hooks/useAuth.tsx`：
 
 ```tsx
-import { useState } from "react";
-
 export const useAuth = () => {
-    const [isAuth, setIsAuth] = useState<boolean>(() => {
-        return localStorage.getItem("isAuthenticated") === "true";
-    });
-
     const login = () => {
         localStorage.setItem("isAuthenticated", "true")
-        setIsAuth(true)
     }
     const logout = () => {
         localStorage.removeItem("isAuthenticated")
-        setIsAuth(false)
     }
-    const isAuthenticated = () => isAuth;
+    const isAuthenticated = () => localStorage.getItem("isAuthenticated") === "true";
 
     return { login, logout, isAuthenticated }
 }
