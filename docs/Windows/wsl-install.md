@@ -60,20 +60,20 @@ default=<username>
 
 ## 配置
 
-1. 在`C:\Users\<用户名>`目录下新建`.wslconfig`文件：
+1. 在`C:\Users\<用户名>`目录下新建`.wslconfig`文件，参数说明见[Main WSL settings](https://learn.microsoft.com/en-us/windows/wsl/wsl-config)：
 
 ```
 [wsl2]
 memory=16GB
-processors=4
+processors=8
 swap=4GB
 localhostForwarding=true
 ```
 
-- memory限制WSL使用的内存
-- processors限制WSL使用的CPU核心数量
-- swap表示WSL使用的交换区大小
-- localhostForwarding表示可以通过localhost访问WSL中的服务
+- memory: WSL的内存大小，默认是Windows内存的50%。
+- processors: WSL的Logical processors数量，默认和Windows数量一样。
+- swap: WSL的交换区大小，默认是Windows内存的20%。
+- localhostForwarding: 表示可以通过localhost访问WSL中的服务。
 
 2. 重启WSL，然后使用如下命令查看配置是否生效：
 
