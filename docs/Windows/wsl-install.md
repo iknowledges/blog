@@ -72,7 +72,7 @@ localhostForwarding=true
 
 - memory: WSL的内存大小，默认是Windows内存的50%。
 - processors: WSL的Logical processors数量，默认和Windows数量一样。
-- swap: WSL的交换区大小，默认是Windows内存的20%。
+- swap: WSL的交换区大小，默认是Windows内存的25%。
 - localhostForwarding: 表示可以通过localhost访问WSL中的服务。
 
 2. 重启WSL，然后使用如下命令查看配置是否生效：
