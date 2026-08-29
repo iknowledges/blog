@@ -129,7 +129,7 @@ llama-server --model Qwen_Qwen3.6-35B-A3B-Q4_K_M.gguf --n-gpu-layers 999 --n-cpu
 - `--temp`：temperature设置模型的创造力，取值为0-2，默认为0.8。取值越大创造的随机性越大。0-0.2适合代码生成、数学计算、事实检查和结构化输出；0.5-0.8适合一般聊天、问答任务；1-1.5适合创造性写作、诗歌和头脑风暴。
 - `-ngl, --n-gpu-layers`: GPU加载的模型层数，可以设为数字、auto或all，默认为auto，设为20表示将模型的20层加载到GPU，其他放到CPU。
 - `-ncmoe, --n-cpu-moe`: 将MoE模型的前多少层留在CPU上，其他放到GPU，通常配合`-ngl 999 -ncmoe 35`使用。
-- `-fa, --flash-attn`: 启动Flash Attention。
+- `-fa, --flash-attn`: 是否启动Flash Attention，取值为on、off或auto，默认为auto。
 - `-t, --threads`: 非GPU工作使用的CPU线程数。
 - `--mlock`: 将模型锁定到RAM，防止Windows swap。
 - `--no-mmap`: 禁用mmap。默认情况下操作系统只在需要时才加载页面块，禁用mmap后会将整个模型提前读到内存里。
