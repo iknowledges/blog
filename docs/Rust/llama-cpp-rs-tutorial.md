@@ -105,3 +105,4 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 #### 参考资料
 
 - [llama-cpp-rs](https://github.com/utilityai/llama-cpp-rs)
+- [docq](https://github.com/lichuang/docq)
