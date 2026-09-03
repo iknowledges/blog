@@ -17,7 +17,7 @@ python Proxifier_Keygen.py -v setup
 3. 打开【Profile】->【Proxification Rules】->【Add】，输入如下配置：
 
 - Name: Antigravity (名称随意设置)
-- Applications: Antigravity.exe; language_server_windows_x64.exe (这里的名称必须和任务管理器中的进程名称一致)
+- Applications: "Antigravity.exe"; "Antigravity IDE.exe"; "language_server_windows_x64.exe" (这里的名称必须和任务管理器中的进程名称一致，名称中有空格必须使用双引号)
 - Action: 选择上一步设置的代理服务
 
 4. 最后打开Antigravity查看是否正常工作。
