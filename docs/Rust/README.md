@@ -13,3 +13,4 @@
 * [napi-rs使用教程](napi-tutorial.md)
 * [SQLx教程](sqlx-tutorial.md)
 * [llama-cpp-rs教程](llama-cpp-rs-tutorial.md)
+* [常用cargo命令](cargo-command.md)
