@@ -21,3 +21,4 @@
 * [Windows embeddable package安装教程](python-embeddable.md)
 * [nbstata安装](jupyter-nbstata.md)
 * [uv安装教程](uv-install.md)
+* [BigQuery教程](bigquery-tutorial.md)
