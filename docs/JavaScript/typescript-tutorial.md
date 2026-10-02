@@ -11,7 +11,7 @@ npm init -y
 2. 安装TypeScript
 
 ```
-npm install --save-dev typescript
+npm install typescript -D
 # 生成tsconfig.json
 npx tsc --init
 ```
@@ -71,3 +71,4 @@ npm run start
 #### 参考资料
 
 - [TypeScript in a Node.js Project](https://www.robinwieruch.de/typescript-node-js/)
+- [Download TypeScript](https://www.typescriptlang.org/download/)
