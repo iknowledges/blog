@@ -10,3 +10,4 @@
 * [vLLM教程](vllm-tutorial.md)
 * [FastFlowLM教程](fastflowml-tutorial.md)
 * [Qwen3-TTS使用教程](qwen-tts-tutorial.md)
+* [Bonsai模型llama.cpp部署教程](bonsai-tutorial.md)
