@@ -75,10 +75,16 @@ uv python uninstall 3.12
 ## 其他命令
 
 ```
-# 更新uv
-uv self update
-# 创建项目
+# 创建Application项目，也可以显示加上--app
 uv init example-app
+# 创建Library项目
+uv init --lib example-lib
+# 创建带扩展模块的项目，maturin用于Rust项目，scikit-build-core用于C,C++,FORTRAN,Cython项目
+uv init --build-backend maturin example-ext
+# 创建不需要编译的项目
+uv init --no-package example-app
+# 创建最小项目
+uv init --bare example-bare
 # 添加依赖
 uv add httpx
 # 移除依赖
@@ -89,6 +95,8 @@ uv sync
 uv build --sdist
 # 构建二进制发行版
 uv build --wheel
+# 更新uv
+uv self update
 ```
 
 #### 参考资料
