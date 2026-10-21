@@ -22,3 +22,4 @@
 * [nbstata安装](jupyter-nbstata.md)
 * [uv安装教程](uv-install.md)
 * [BigQuery教程](bigquery-tutorial.md)
+* [Alembic教程](alembic-tutorial.md)
