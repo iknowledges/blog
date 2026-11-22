@@ -11,6 +11,7 @@
 * [VScode编写Snippets教程](vscode-snippets.md)
 * [Clion配置Qt开发环境](clion-qt.md)
 * [Antigravity使用Proxifier教程](antigravity-proxifier.md)
+* [Antigravity使用antissh教程](antigravity-antissh.md)
 * [Unity安装教程](unity-install.md)
 * [Thinkorswim设置教程](thinkorswim-config.md)
 * [Trader Workstation设置教程](tws-config.md)
