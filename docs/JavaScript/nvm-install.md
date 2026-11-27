@@ -56,12 +56,14 @@ node --version
 
 ## Windows中安装
 
+### Version 1.x.x
+
 1. 下载[nvm-noinstall.zip](https://github.com/coreybutler/nvm-windows/releases)并解压。
 2. 在解压目录创建[settings.txt](https://github.com/coreybutler/nvm/tree/master/examples)，内容如下：
 
 ```
-root: D:\Software\NVM\nvm-noinstall
-path: D:\Software\NVM\nodejs
+root: D:\Software\nvm\nvm-noinstall
+path: D:\Software\nvm\nodejs
 arch: 64
 proxy: none
 ```
@@ -74,8 +76,8 @@ proxy: none
 3. 配置系统环境变量，并将`%NVM_HOME%;%NVM_SYMLINK%`添加到`PATH`
 
 ```
-NVM_HOME: D:\Software\NVM\nvm-noinstall
-NVM_SYMLINK: D:\Software\NVM\nodejs
+NVM_HOME: D:\Software\nvm\nvm-noinstall
+NVM_SYMLINK: D:\Software\nvm\nodejs
 ```
 
 4. 测试nvm是否安装成功：
@@ -84,18 +86,55 @@ NVM_SYMLINK: D:\Software\NVM\nodejs
 nvm -v
 ```
 
-5. 安装nodejs:
+### Version 2
+
+1. 下载[nvm-2.0.1-x64-setup.exe](https://github.com/nvm-windows/nvm/releases)并运行安装。
+
+- NVM blocks npm in that case (NVM4305) unless you harden permissions or use a private path.
+    - Harden permissions for this path (recommended; Windows may ask for approval)
+- Shim mode offers an enhanced modern workflow. Link mode offers guaranteed minimum latency with no extra features. This can be changed at any time by running "nvm use <mode>".
+    - Shim
+- These settings can be changed at any time using the "nvm config" command.
+    - Auto-detect Node.js version, e.g. .nvmrc, .node-version, package.json (shim mode)
+    - Require valid TLS/SSL certificates from download mirrors
+
+2. 修改配置
 
 ```
-# 安装长期支持版
+# 设置Node.js安装根目录
+nvm config set root="D:\Software\nvm\installs"
+# 淘宝镜像站
+nvm config set node_mirror=https://npmmirror.com/mirrors/node
+nvm config set npm_mirror=https://registry.npmmirror.com
+# 查看配置
+nvm config list
+```
+
+3. 测试nvm是否安装成功：
+
+```
+nvm -v
+```
+
+### 常用命令
+
+```
+# 安装最新lts版
 nvm install lts
+# 查看24的版本信息
+nvm list releases 24 --json
+# 安装指定版本
+nvm install 24.15.0
 # 查看已安装的nodejs
 nvm ls
 # 使用已安装的nodejs
 nvm use 24.15.0
+# 卸载并清除缓存
+nvm uninstall 24.15.0 --purge
 ```
 
 #### 参考资料
 
 - [Node Version Manager](https://github.com/nvm-sh/nvm)
-- [nvm-windows](https://github.com/coreybutler/nvm-windows/wiki#manual-installation)
+- [nvm-windows v1 - manual installation](https://github.com/nvm-windows/nvm/wiki#manual-installation)
+- [nvm-windows v2 - installation](https://docs.nvm-windows.com/install/installers)
