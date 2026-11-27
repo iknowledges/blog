@@ -15,3 +15,4 @@
 * [TanStack Router教程](tanstack-router-tutorial.md)
 * [React Router教程](react-router-tutorial.md)
 * [Vite中配置CORS](vite-cors.md)
+* [qmd教程](qmd-tutorial.md)
